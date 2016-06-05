@@ -8,6 +8,7 @@
 
   * [Puma](http://puma.io)
   * [Better Errors](https://github.com/charliesome/better_errors)
+  * [Bullet](https://github.com/flyerhzm/bullet)
 
 
 * Configuration - TBD
