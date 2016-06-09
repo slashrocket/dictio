@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :definitions
+  root 'terms#index'
 
-  root 'terms/index'
+  resources :terms do
+    resources :definitions
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
