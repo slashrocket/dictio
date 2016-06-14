@@ -1,3 +1,4 @@
+# Definition Controller
 class DefinitionsController < ApplicationController
   before_action :set_term
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
