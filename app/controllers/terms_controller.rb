@@ -19,7 +19,7 @@ class TermsController < ApplicationController
   def create
     @term = Term.new(term_params)
     if @term.save
-      flash[:notice] = "Term successfully created"
+      flash[:notice] = 'Term successfully created'
       redirect_to @term
     else
       render 'new'
@@ -28,7 +28,7 @@ class TermsController < ApplicationController
 
   def update
     if @term.update_attributes(term_params)
-      flash[:success] = "Term updated"
+      flash[:success] = 'Term updated'
       redirect_to @term
     else
       render 'edit'
@@ -38,18 +38,17 @@ class TermsController < ApplicationController
   def destroy
     @term.destroy
 
-    redirect_to(root_url, notice: "Term deleted!")
-
+    redirect_to(root_url,
+                notice: 'Term deleted!')
   end
 
   private
 
-    def set_term
-      @term = Term.find(params[:id])
-    end
+  def set_term
+    @term = Term.find(params[:id])
+  end
 
-    def term_params
-      params.require(:term).permit(:name)
-    end
-
+  def term_params
+    params.require(:term).permit(:name)
+  end
 end

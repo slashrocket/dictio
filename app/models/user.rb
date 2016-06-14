@@ -13,8 +13,6 @@
 #  confirmation_token :string(128)
 #  remember_token     :string(128)
 #
-
 class User < ActiveRecord::Base
   include Clearance::User
-
 end

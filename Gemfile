@@ -18,7 +18,7 @@ gem 'clearance'
 gem 'basscss-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in your web application faster.
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -32,7 +32,7 @@ gem 'puma'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution & get a debug console
   gem 'byebug'
 end
 
@@ -44,7 +44,7 @@ group :development do
   # Bullet helps to kill N+1 queries and unused eager loading
   gem 'bullet'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your app running in the background.
   gem 'spring'
 
   # Annotate models with current schema

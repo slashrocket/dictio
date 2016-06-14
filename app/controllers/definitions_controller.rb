@@ -17,9 +17,10 @@ class DefinitionsController < ApplicationController
   def create
     @definition = @term.definition.new(definition_params)
     if @definition.save
-      redirect_to(@term, notice: "Definition created!")
+      redirect_to(@term,
+                  notice: 'Definition created!')
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -28,16 +29,18 @@ class DefinitionsController < ApplicationController
 
   def update
     if @definition.update_attributes(definition_params)
-      redirect_to([@definition.term, @definition], notice: "Definition updated!")
+      redirect_to([@definition.term, @definition],
+                  notice: 'Definition updated!')
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
   def destroy
     @definition.destroy
 
-    redirect_to(term_url(@term), notice: "Definition deleted!")
+    redirect_to(term_url(@term),
+                notice: 'Definition deleted!')
   end
 
   private
