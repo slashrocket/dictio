@@ -1,2 +1,8 @@
-<h1>Terms#index</h1>
-<p>Find me in app/views/terms/index.html.erb</p>
+<% for term in @terms do %>
+  <section>
+    <h2 class="h1"><%= term.name %></h2>
+    <% for definition in term.definitions do %>
+      <p><%= definition.meaning %></p>
+    <% end %>
+  </section>
+<% end %>
