@@ -17,6 +17,11 @@ class TermTest < ActiveSupport::TestCase
   
   test "should successfully save a term" do
     term = Term.new
-    assert term.save
+    assert_not term.save, "Term saved without name."
+  end
+  
+  test "should be invalid without a name" do
+    term = Term.new
+    assert !term.valid?, "Name is not being validated."
   end
 end

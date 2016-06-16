@@ -8,5 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Term < ActiveRecord::Base
+  validates :name, presence: true
   has_many :definitions
+  
 end

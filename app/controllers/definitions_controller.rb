@@ -15,7 +15,7 @@ class DefinitionsController < ApplicationController
   end
 
   def create
-    @definition = @term.definition.new(definition_params)
+    @definition = @term.definitions.new(definition_params)
     if @definition.save
       redirect_to(@term,
                   notice: 'Definition created!')
