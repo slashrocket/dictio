@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/slashrocket/dictio.png?label=ready&title=Ready)](https://waffle.io/slashrocket/dictio)
+[![Build Status](https://travis-ci.org/slashrocket/dictio.svg?branch=develop)](https://travis-ci.org/slashrocket/dictio)
 # Dictio
 
 * Ruby 2.3.0
