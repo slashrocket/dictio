@@ -11,7 +11,7 @@ class DefinitionsController < ApplicationController
   end
 
   def new
-    @definition = @term.definition.new
+    @definition = @term.definitions.new
   end
 
   def create
