@@ -14,4 +14,9 @@ class TermTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  
+  test "should successfully save a term" do
+    term = Term.new
+    assert term.save
+  end
 end
