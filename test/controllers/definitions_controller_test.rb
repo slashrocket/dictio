@@ -2,37 +2,22 @@ require 'test_helper'
 
 class DefinitionsControllerTest < ActionController::TestCase
   test "should get index" do
-    get :index
+    get :index, term_id: 1
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, id: 1,term_id: 1
     assert_response :success
   end
 
   test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should get create" do
-    get :create
+    get :new, term_id: 1
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get update" do
-    get :update
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get :destroy
+    get :edit, id: 1, term_id: 1
     assert_response :success
   end
 

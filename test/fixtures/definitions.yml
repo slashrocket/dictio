@@ -12,9 +12,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   meaning: MyText
-  term_id: 
+  term_id: 1
 
 two:
   meaning: MyText
-  term_id: 
+  term_id: 2
