@@ -7,7 +7,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, id: 1
+    get :show, id: terms(:slashrocket).id
     assert_response :success
   end
 
