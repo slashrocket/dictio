@@ -19,7 +19,7 @@ class TermsController < ApplicationController
   def create
     @term = Term.new(term_params)
     if @term.save
-      flash[:notice] = 'Term created!'
+      flash[:success] = 'Term created!'
       redirect_to terms_path
     else
       render 'new'
