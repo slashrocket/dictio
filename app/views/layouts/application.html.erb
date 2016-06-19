@@ -11,9 +11,7 @@
   <div class="clearfix sm-col-9 mx-auto">
     <%= render 'layouts/nav' %>
     <div class="pt4">
-      <% flash.each do |message_type, message| %>
-        <%= message %>
-      <% end %>
+    <%= render 'layouts/flash' %>
       <%= yield %>
     </div>
   </div>
