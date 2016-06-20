@@ -1,3 +1,6 @@
+<script>
 <% flash.each do |message_type, message| %>
-  <%= message %>
+$.notify("<%= message %>", "<%= message_type %>");
 <% end %>
+
+</script
