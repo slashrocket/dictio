@@ -11,17 +11,21 @@
 require 'test_helper'
 
 class TermTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  
-  test "should successfully save a term" do
-    term = Term.new
-    assert_not term.save, "Term saved without name."
+
+  test 'has valid test data for basic term' do
+    assert terms(:slashrocket).valid?, "Expected
+    #{terms(:slashrocket).inspect} to be valid"
   end
-  
-  test "should be invalid without a name" do
+
+  test 'should successfully save a term' do
     term = Term.new
-    assert !term.valid?, "Name is not being validated."
+    term.name = terms(:slashrocket).name
+    assert term.save, 'Term did not save.'
   end
+
+  test 'should be invalid without a name' do
+    term = Term.new
+    assert !term.valid?, 'Name is not being validated.'
+  end
+
 end
