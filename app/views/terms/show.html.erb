@@ -1,1 +1,9 @@
 <h1><%= @term.name %></h1>
+
+<ol>
+  <% for definition in @term.definitions %>
+    <li><%= definition.meaning %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Add a Definition", new_term_definition_path(@term) %>
