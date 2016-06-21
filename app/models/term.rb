@@ -9,6 +9,6 @@
 #
 class Term < ActiveRecord::Base
   validates :name, presence: true
-  has_many :definitions
-  
+  has_many :definitions, dependent: :destroy
+
 end
