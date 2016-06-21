@@ -14,8 +14,13 @@ require 'test_helper'
 class DefinitionTest < ActiveSupport::TestCase
 
   test 'has valid test data for basic definition' do
-    assert definitions(:slashrocketDef).valid?, "Expected
-    #{definitions(:slashrocketDef).inspect} to be valid"
+    assert_valid definitions(:slashrocketDef)
+  end
+
+  test 'should successfully instantiate a definition' do
+    definition = Definition.new
+    definition.term_id = definitions(:slashrocketDef).term
+    assert definition, 'Term was not instantiated.'
   end
 
   test 'should successfully save a defintion' do

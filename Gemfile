@@ -28,9 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Puma for web server. It's the Heroku default, after all ;)
 gem 'puma'
 
-# Use Coveralls for testing coverage
-# gem 'coveralls', require: false
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,4 +51,9 @@ group :development do
 
   # Annotate models with current schema
   gem 'annotate'
+end
+
+group :test do
+  # Use simplecov for testing coverage
+  gem 'simplecov', require: false
 end

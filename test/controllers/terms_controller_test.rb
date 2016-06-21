@@ -11,4 +11,14 @@ class TermsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get :edit, id: terms(:slashrocket).id
+    assert_response :success
+  end
+
 end
