@@ -1,6 +1,6 @@
 <% for term in @terms do %>
   <section>
-    <h2 class="h1"><%= term.name %> <span class="h5"><%= link_to 'Edit', edit_term_path(term) %> | <%= link_to 'Delete', term, method: :delete, data: {confirm: 'Are you sure?'} %></span></h2>
+    <h2 class="h1"><%= link_to term.name, term %> <span class="h5"><%= link_to 'Edit', edit_term_path(term) %> | <%= link_to 'Delete', term, method: :delete, data: {confirm: 'Are you sure?'} %></span></h2>
     <% if term.definitions.exists? %>
       <p><%= term.definitions.first.meaning %></p>
     <% else %>
