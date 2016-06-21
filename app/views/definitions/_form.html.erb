@@ -1,0 +1,5 @@
+<%= form_for([@definition.term, @definition]) do |f| %>
+  <%= f.label :meaning %><br />
+  <%= f.text_area :meaning %>
+  <%= f.submit %>
+<% end %>

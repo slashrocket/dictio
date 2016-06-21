@@ -1,2 +1,8 @@
-<h1>Definitions#new</h1>
-<p>Find me in app/views/definitions/new.html.erb</p>
+<h1>Submit a Definition</h1>
+
+    <% if signed_in? %>
+        <%= render 'form' %>
+        <%= link_to 'Cancel', terms_path %>
+    <% else %>
+        Please create an account to submit a definition or <%= link_to 'sign in', sign_in_path %>.
+    <% end %>
