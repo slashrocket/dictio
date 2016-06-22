@@ -29,7 +29,7 @@ class DefinitionsController < ApplicationController
 
   def update
     if @definition.update_attributes(definition_params)
-      redirect_to([@definition.term, @definition],
+      redirect_to(@term,
                   notice: 'Definition updated!')
     else
       render action: 'edit'
