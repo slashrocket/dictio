@@ -3,13 +3,6 @@ class DefinitionsController < ApplicationController
   before_action :set_term
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @definitions = @term.definitions
-  end
-
-  def show
-  end
-
   def new
     @definition = @term.definitions.new
   end

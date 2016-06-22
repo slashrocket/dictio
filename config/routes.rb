@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'terms#index'
 
   resources :terms do
-    resources :definitions
+    resources :definitions, only: [:new, :create, :edit, :update, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
