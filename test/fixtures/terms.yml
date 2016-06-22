@@ -13,5 +13,5 @@
 slashrocket:
   name: Slashrocket
 
-two:
-  name: MyString
+rails:
+  name: Ruby on Rails

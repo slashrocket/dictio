@@ -15,6 +15,6 @@ slashrocketDef:
   term: slashrocket
   meaning: An online community that's super cool.
 
-two:
-  meaning: MyText
-  term: slashrocket
+railsDef:
+  term: rails
+  meaning: Ruby on Rails, or simply Rails, is a web application framework written in Ruby under the MIT License.
