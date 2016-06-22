@@ -1,5 +1,10 @@
 <%= form_for(@term) do |f| %>
   <%= f.label :name %><br>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br><br>
+  <%= f.fields_for :definitions do |d| %>
+    <%= d.label :meaning, "Definition" %><br>
+    <%= d.text_area :meaning, placeholder: "Add a definition", rows: 6 %>
+  <% end %>
+  <br>
   <%= f.submit 'Submit' %>
 <% end %>

@@ -11,6 +11,7 @@ class TermsController < ApplicationController
 
   def new
     @term = Term.new
+    @term.definitions.new
   end
 
   def edit
@@ -48,6 +49,6 @@ class TermsController < ApplicationController
   end
 
   def term_params
-    params.require(:term).permit(:name)
+    params.require(:term).permit(:name, definitions_attributes: [:meaning])
   end
 end

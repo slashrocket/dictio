@@ -8,7 +8,10 @@
 #  updated_at :datetime         not null
 #
 class Term < ActiveRecord::Base
-  validates :name, presence: true
   has_many :definitions, dependent: :destroy
 
+  accepts_nested_attributes_for :definitions
+
+  validates :name, presence: true
+  validates_associated :definitions
 end
