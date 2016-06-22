@@ -10,8 +10,8 @@ class DefinitionsController < ApplicationController
   def create
     @definition = @term.definitions.new(definition_params)
     if @definition.save
-      redirect_to(@term,
-                  notice: 'Definition created!')
+      flash[:success] = 'Definition created!'
+      redirect_to @term
     else
       render action: 'new'
     end
@@ -22,8 +22,8 @@ class DefinitionsController < ApplicationController
 
   def update
     if @definition.update_attributes(definition_params)
-      redirect_to(@term,
-                  notice: 'Definition updated!')
+      flash[:success] = 'Definition updated!'
+      redirect_to @term
     else
       render action: 'edit'
     end
@@ -31,9 +31,8 @@ class DefinitionsController < ApplicationController
 
   def destroy
     @definition.destroy
-
-    redirect_to(term_url(@term),
-                notice: 'Definition deleted!')
+    flash[:error] = 'Definition deleted!'
+    redirect_to term_url(@term)
   end
 
   private

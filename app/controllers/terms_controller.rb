@@ -37,9 +37,8 @@ class TermsController < ApplicationController
 
   def destroy
     @term.destroy
-
-    redirect_to(root_url,
-                notice: 'Term deleted!')
+    flash[:error] = 'Term deleted!'
+    redirect_to root_url
   end
 
   private
