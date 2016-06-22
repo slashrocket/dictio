@@ -1,24 +1,55 @@
 require 'test_helper'
 
 class DefinitionsControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index, term_id: terms(:slashrocket).id
-    assert_response :success
-  end
-
-  test "should get show" do
-    get :show, id: definitions(:slashrocketDef), term_id: terms(:slashrocket).id
-    assert_response :success
-  end
-
-  test "should get new" do
-    get :new, term_id: terms(:slashrocket).id
+  test "get new is successful" do
+    get :new, term_id: terms(:slashrocket)
+    assert_kind_of Definition, assigns(:definition)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: definitions(:slashrocketDef), term_id: terms(:slashrocket).id
+    get :edit, id: definitions(:slashrocketDef), term_id: terms(:slashrocket)
+    assert_equal definitions(:slashrocketDef), assigns(:definition)
     assert_response :success
+  end
+
+  test "post create is successful with valid attributes" do
+    definition_params = { meaning: "Super cool place to learn stuff." }
+    assert_difference "Definition.count" do
+      post :create, term_id: terms(:slashrocket), definition: definition_params
+    end
+    assert_redirected_to term_path(terms(:slashrocket))
+  end
+
+  test "post create is unsuccessful with invalid attributes" do
+    definition_params = { meaning: "" }
+    assert_no_difference "Definition.count" do
+      post :create, term_id: terms(:slashrocket), definition: definition_params
+    end
+    assert_template "new"
+    assert_response :success
+  end
+
+  test "put update is successful with valid attributes" do
+    valid_attributes = { meaning: "This definition has a new meaning." }
+    put :update, term_id: terms(:slashrocket), id: definitions(:slashrocketDef), definition: valid_attributes
+    assert_equal valid_attributes[:meaning], definitions(:slashrocketDef).reload.meaning
+    assert_redirected_to term_path(terms(:slashrocket))
+  end
+
+  test "put update is unsuccessful with invalid attributes" do
+    invalid_attributes = { meaning: "" }
+    put :update, term_id: terms(:slashrocket), id: definitions(:slashrocketDef), definition: invalid_attributes
+    refute_equal invalid_attributes[:meaning], definitions(:slashrocketDef).reload.meaning
+    assert_template "edit"
+    assert_response :success
+  end
+
+  test "delete destroy is successful" do
+    assert_difference "Definition.count", -1 do
+      delete :destroy, term_id: terms(:slashrocket), id: definitions(:slashrocketDef)
+    end
+    assert_redirected_to term_path(terms(:slashrocket))
   end
 
 end
