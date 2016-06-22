@@ -19,13 +19,13 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "get show is successful" do
-    get :show, id: terms(:slashrocket).id
+    get :show, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
     assert_response :success
   end
 
   test "get edit is successful" do
-    get :edit, id: terms(:slashrocket).id
+    get :edit, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
     assert_response :success
   end
@@ -49,14 +49,14 @@ class TermsControllerTest < ActionController::TestCase
 
   test "put update is successful with valid attributes" do
     valid_attributes = { name: "Atom" }
-    put :update, id: terms(:slashrocket).id, term: valid_attributes
+    put :update, id: terms(:slashrocket), term: valid_attributes
     assert_equal valid_attributes[:name], terms(:slashrocket).reload.name
     assert_redirected_to term_path(terms(:slashrocket))
   end
 
   test "put update is unsuccessful with invalid attributes" do
     invalid_attributes = { name: "" }
-    put :update, id: terms(:slashrocket).id, term: invalid_attributes
+    put :update, id: terms(:slashrocket), term: invalid_attributes
     refute_equal invalid_attributes[:name], terms(:slashrocket).reload.name
     assert_template "edit"
     assert_response :success
@@ -64,7 +64,7 @@ class TermsControllerTest < ActionController::TestCase
 
   test "delete destroy is successful" do
     assert_difference "Term.count", -1 do
-      delete :destroy, id: terms(:slashrocket).id
+      delete :destroy, id: terms(:slashrocket)
     end
     assert_redirected_to root_url
   end
