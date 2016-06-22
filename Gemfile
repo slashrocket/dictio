@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Puma for web server. It's the Heroku default, after all ;)
 gem 'puma'
 
+# Use Administrate for Admin panel
+gem 'administrate', '~> 0.2.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

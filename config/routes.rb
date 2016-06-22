@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :definitions
+resources :terms
+resources :users
+
+    root to: "definitions#index"
+  end
+
   root 'terms#index'
 
   resources :terms do
