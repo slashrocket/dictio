@@ -10,4 +10,5 @@
 #
 class Definition < ActiveRecord::Base
   belongs_to :term
+  validates :meaning, presence: true
 end
