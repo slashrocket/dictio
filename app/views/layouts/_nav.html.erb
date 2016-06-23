@@ -3,18 +3,18 @@
     <ul class="nav nav-pills">
       <% if signed_in? %>
         <% if current_user.admin? %>
-          <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link nav-text" %></li>
+          <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link white-text" %></li>
         <% end %>
-        <li class="nav-item"><%= content_tag(:span, current_user.email, class: "nav-link nav-text") %></li>
-        <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link nav-text" %></li>
+        <li class="nav-item"><%= content_tag(:span, current_user.email, class: "nav-link white-text") %></li>
+        <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link white-text" %></li>
       <% else %>
-        <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link nav-text" %></li>
+        <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link white-text" %></li>
       <% end %>
-      <li class="nav-item pull-md-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "nav-link nav-text") %></li>
+      <li class="nav-item pull-md-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "nav-link white-text") %></li>
     </ul>
   </div>
 </div>
-<div class="navbar navbar-full navbar-static-top bg-blue">
+<div class="navbar navbar-full navbar-static-top">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">&#9776;</button>
     <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>

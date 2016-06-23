@@ -1,16 +1,16 @@
 <div class="container-fluid">
-  <div class="jumbotron-fluid text-xs-center pad-top-50">
+  <div class="jumbotron-fluid text-xs-center">
     <div class="container-fluid">
       <h1 class="display-1 jumbo-font">Dictio</h1>
       <p class="lead">An online dictionary for developers</p>
       <div class="row">
         <form class="form col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4">
-          <%= search_field_tag("search", nil, class: "form-control", placeholder: "Search") %>
+          <%= search_field_tag("search", nil, class: "form-control search-style", placeholder: "Search for a Term") %>
         </form>
       </div>
       <br>
       <div class="row">
-        <%= button_to 'Submit a Term', new_term_path, method: :get, class: "btn btn-primary btn-lg" %>
+        <%= button_to 'Submit a Term', new_term_path, method: :get, class: "btn btn-lg" %>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="container">
       <% for term in @terms do %>
-        <div class="col-lg-6 col-xl-4">
+        <div class="col-lg-6 col-xl-4 visible">
           <div class="card">
             <div class="card-block">
               <h3 class="card-title"><%= link_to term.name, term %></h3>
@@ -30,9 +30,17 @@
           </div>
         </div>
       <% end %>
-      <div class="col-lg-6 col-xl-4">
-        <div class="text-xs-center">
-      </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  holmes({
+    input: '.form input',
+    find: '.card',
+    class: {
+      visible: 'visible',
+      hidden: 'hidden'
+    },
+    instant: true
+  });
+</script>
