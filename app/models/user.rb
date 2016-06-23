@@ -12,7 +12,9 @@
 #  encrypted_password :string(128)
 #  confirmation_token :string(128)
 #  remember_token     :string(128)
+#  admin              :boolean          default(FALSE), not null
 #
+
 class User < ActiveRecord::Base
   include Clearance::User
 end
