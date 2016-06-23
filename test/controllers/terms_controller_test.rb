@@ -26,7 +26,7 @@ class TermsControllerTest < ActionController::TestCase
     get :show, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
     assert_response :success
-    assert_select 'title', full_title(@term.name)
+    assert_select 'title', full_title(terms(:slashrocket).name)
   end
   
   test "get edit is successful" do
