@@ -11,12 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
     <%= render 'layouts/flash' %>
     <%= render 'layouts/nav' %>
-    <div class="pad-top-50">
+    <div class="container-fluid">
       <%= yield %>
     </div>
-  </div>
 </body>
 </html>

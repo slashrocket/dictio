@@ -20,7 +20,7 @@
 $seagull: #73BEDA;
 $madison: #2E3F4F;
 
-* {
+body {
   font-family: Yantramanav;
   color: $madison;
 }
@@ -28,10 +28,20 @@ $madison: #2E3F4F;
 .brand-font {
   font-family: Satisfy;
   font-size: 1.5rem;
+  color: $madison;
+}
+
+.jumbo-font {
+  font-family: Satisfy;
+  color: $madison;
 }
 
 .bg-blue {
   background-color: $seagull;
+}
+
+.bg-navy {
+  background-color: $madison;
 }
 
 .navy {
@@ -39,9 +49,23 @@ $madison: #2E3F4F;
 }
 
 a:link, a:hover {
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 .pad-top-50 {
   padding-top: 50px;
+}
+
+.nav-text {
+  color: white !important;
+}
+
+.card {
+  min-height: 13rem;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

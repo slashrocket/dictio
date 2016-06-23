@@ -1,27 +1,22 @@
-<nav class="navbar navbar-light bg-blue">
-  <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>
-  <ul class="nav navbar-nav">
-    <% if signed_in? %>
-      <li class="nav-item pull-xs-right"></li>
-      <li class="nav-item pull-xs-right">
-        <%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link" %>
-      </li>
-      <li class="nav-item pull-xs-right">
-        <%= content_tag(:span, current_user.email, class: "nav-link") %>
-      </li>
-      <% if current_user.admin? %>
-        <li class="nav-item pull-xs-right">
-          <%= link_to "Admin", admin_root_path, class: "nav-link" %>
-        </li>
+<div class="navbar-collapse collapse bg-navy" id="navbar-header">
+  <div class="container-fluid">
+    <ul class="nav nav-pills">
+      <% if signed_in? %>
+        <% if current_user.admin? %>
+          <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link nav-text" %></li>
+        <% end %>
+        <li class="nav-item"><%= content_tag(:span, current_user.email, class: "nav-link nav-text") %></li>
+        <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link nav-text" %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link nav-text" %></li>
       <% end %>
-    <% else %>
-      <li class="nav-item pull-xs-right"></li>
-      <li class="nav-item pull-xs-right">
-        <%= link_to "Sign in", sign_in_path, class: "nav-link" %>
-      </li>
-    <% end %>
-  </ul>
-  <form class="form pull-md-right">
-    <%= search_field_tag("search", nil, class: "form-control", placeholder: "Search") %>
-  </form>
-</nav>
+      <li class="nav-item pull-md-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "nav-link nav-text") %></li>
+    </ul>
+  </div>
+</div>
+<div class="navbar navbar-full navbar-static-top bg-blue">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">&#9776;</button>
+    <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>
+  </div>
+</div>
