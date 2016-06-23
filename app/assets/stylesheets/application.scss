@@ -18,6 +18,7 @@
 @import 'https://fonts.googleapis.com/css?family=Satisfy|Yantramanav';
 
 $jasper: #E43B4A;
+$romance: #FDFFFD;
 $feta: #F1FAEE;
 $aqua: #AADADB;
 $wedgewood: #477C9C;
@@ -26,18 +27,23 @@ $cello: #1E3656;
 body {
   font-family: Yantramanav;
   color: $cello;
-  background-color: $feta;
 }
 
 .brand-font {
   font-family: Satisfy;
   font-size: 1.5rem;
-  color: $cello;
+  color: $jasper;
 }
 
 .jumbo-font {
   font-family: Satisfy;
-  color: $cello;
+  color: $jasper;
+}
+
+.btn-red {
+  background-color: $jasper !important;
+  color: white !important;
+  border: none;
 }
 
 .bg-blue {
@@ -48,33 +54,20 @@ body {
   background-color: $cello;
 }
 
-.navy {
-  color: $cello;
-}
-
-.bg-red {
-  background-color: $jasper;
-}
-
-.red {
-  color: $jasper;
-}
-
 a:hover {
   color: $wedgewood;
-  // text-decoration: none;
 }
 
 a {
-  color: $cello;
+  color: $jasper;
 }
 
 .white-text {
   color: white !important;
 }
 
-.feta-text {
-  color: $feta;
+.romance-text {
+  color: $romance;
 }
 
 .card-text {
@@ -83,18 +76,22 @@ a {
 
 .card {
   min-height: 13rem;
-  background-color: $aqua;
+  background-color: $feta;
 }
 
 .card-footer {
+  background-color: $wedgewood;
   position: absolute;
   bottom: 0;
   width: 100%;
+  a {
+    color: $feta;
+  }
 }
 
 input, textarea {
   border-color: $wedgewood !important;
-  background-color: $feta !important;
+  background-color: white !important;
   color: $wedgewood !important;
   font-size: 1.125rem !important;
 }

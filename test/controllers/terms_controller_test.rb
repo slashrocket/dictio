@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TermsControllerTest < ActionController::TestCase
   include ApplicationHelper
-  
+
   test "get index is successful" do
     get :index
     assert_includes assigns(:terms), terms(:slashrocket)
@@ -28,7 +28,7 @@ class TermsControllerTest < ActionController::TestCase
     assert_response :success
     assert_select 'title', full_title(@term.name)
   end
-  
+
   test "get edit is successful" do
     get :edit, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
