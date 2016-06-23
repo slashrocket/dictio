@@ -1,0 +1,7 @@
+<%= form_for(@term) do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </fieldset>
+  <%= f.submit 'Submit', class: "btn" %>
+<% end %>
