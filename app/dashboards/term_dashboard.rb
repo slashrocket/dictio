@@ -24,7 +24,7 @@ class TermDashboard < Administrate::BaseDashboard
     :name,
     :id,
     :definitions,
-    :created_at
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
