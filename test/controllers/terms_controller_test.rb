@@ -41,6 +41,7 @@ class TermsControllerTest < ActionController::TestCase
       post :create, term: term_params
     end
     assert_redirected_to terms_path
+    assert_equal 'Term created!', flash[:success]
   end
 
   test "post create is unsuccessful with invalid attributes" do
@@ -57,6 +58,7 @@ class TermsControllerTest < ActionController::TestCase
     put :update, id: terms(:slashrocket), term: valid_attributes
     assert_equal valid_attributes[:name], terms(:slashrocket).reload.name
     assert_redirected_to term_path(terms(:slashrocket))
+    assert_equal 'Term updated!', flash[:success]
   end
 
   test "put update is unsuccessful with invalid attributes" do
@@ -72,6 +74,7 @@ class TermsControllerTest < ActionController::TestCase
       delete :destroy, id: terms(:slashrocket)
     end
     assert_redirected_to root_url
+    assert_equal 'Term deleted!', flash[:error]
   end
 
 end
