@@ -21,10 +21,10 @@ one:
   email: MyString
   first_name: MyString
   last_initial: MyString
-  password: MyString
+
 
 two:
   email: MyString
   first_name: MyString
   last_initial: MyString
-  password: MyString
+
