@@ -10,12 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require basscss/basscss
- *= require basscss/basscss-addons
  *= require_tree .
  *= require_self
  */
-
+  
+@import "bootstrap";
 @import 'https://fonts.googleapis.com/css?family=Satisfy|Yantramanav';
 
 $seagull: #73BEDA;
@@ -37,4 +36,9 @@ $madison: #2E3F4F;
 
 .navy {
   color: $madison;
+}
+
+a:link, a:hover {
+  text-decoration: none;
+  
 }
