@@ -1,10 +1,10 @@
-<div class="col-lg-6 col-lg-offset-3">
-  <h1>Submit a Term</h1>
+<div class="col-lg-8 col-lg-offset-2">
+  <h3>Submit a New Term</h3>
 
   <% if signed_in? %>
-      <%= render 'form' %>
-      <%= link_to 'Cancel', terms_path %>
+    <%= render 'form' %>
+    <%= link_to 'Cancel', terms_path %>
   <% else %>
-      <p>Please create an account to submit a term or <%= link_to 'Sign In', sign_in_path %>.</p>
+    <p>Please create an account to submit a term or <%= link_to 'Sign In', sign_in_path %>.</p>
   <% end %>
 </div>

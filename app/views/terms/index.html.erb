@@ -1,15 +1,11 @@
 <div class="container">
   <div class="row">
     <% for term in @terms do %>
-      <div class="col-sm-4">
-        <h2><%= link_to term.name, term %>
-          <span class="h6"><%= link_to 'Edit', edit_term_path(term) %> | <%= link_to 'Delete', term, method: :delete, data: {confirm: 'Are you sure?'} %></span>
-        </h2>
-        <% if term.definitions.exists? %>
-          <p class="lead"><%= term.definitions.first.meaning %></p>
-        <% else %>
-          <%= link_to "Add a Definition", new_term_definition_path(term) %>
-        <% end %>
+      <div class="col-sm-6 col-md-4">
+        <div class="card card-block">
+          <h3 class="card-title"><%= link_to term.name, term %></h3>
+          <p class="card-text"><%= term.definitions.first.meaning %></p>
+        </div>
       </div>
     <% end %>
   </div>

@@ -1,8 +1,10 @@
-<h1>Submit a Definition</h1>
+<div class="col-lg-6 col-lg-offset-3">
+  <h3>Submit a Definition for <%= @term.name %></h3>
 
-    <% if signed_in? %>
-        <%= render 'form' %>
-        <%= link_to 'Cancel', terms_path %>
-    <% else %>
-        Please create an account to submit a definition or <%= link_to 'sign in', sign_in_path %>.
-    <% end %>
+  <% if signed_in? %>
+    <%= render 'form' %>
+    <%= link_to 'Cancel', terms_path %>
+  <% else %>
+    <p>Please create an account to submit a definition or <%= link_to 'sign in', sign_in_path %>.</p>
+  <% end %>
+</div>

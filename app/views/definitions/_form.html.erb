@@ -1,5 +1,7 @@
 <%= form_for([@definition.term, @definition]) do |f| %>
-  <%= f.label :meaning %><br />
-  <%= f.text_area :meaning %>
-  <%= f.submit %>
+  <fieldset class="form-group">
+    <%= f.label :meaning %>
+    <%= f.text_area :meaning, class: "form-control" %>
+  </fieldset>
+  <%= f.submit 'Submit', class: "btn" %>
 <% end %>
