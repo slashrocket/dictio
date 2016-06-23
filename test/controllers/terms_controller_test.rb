@@ -1,10 +1,13 @@
 require 'test_helper'
 
 class TermsControllerTest < ActionController::TestCase
+  include ApplicationHelper
+  
   test "get index is successful" do
     get :index
     assert_includes assigns(:terms), terms(:slashrocket)
     assert_response :success
+    assert_select 'title', 'Dictio'
   end
 
   test "get index includes all terms by default" do
@@ -16,14 +19,16 @@ class TermsControllerTest < ActionController::TestCase
     get :new
     assert_kind_of Term, assigns(:term)
     assert_response :success
+    assert_select 'title', 'Dictio | New Term'
   end
 
   test "get show is successful" do
     get :show, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
     assert_response :success
+    assert_select 'title', full_title(@term.name)
   end
-
+  
   test "get edit is successful" do
     get :edit, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
