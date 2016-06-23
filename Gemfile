@@ -28,6 +28,12 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 # Puma for web server. It's the Heroku default, after all ;)
 gem 'puma'
 
+# Use Administrate for Admin panel
+gem 'administrate', '~> 0.2.2'
+
+# Bourbon needed to make Administrate work...for now
+gem 'bourbon'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
