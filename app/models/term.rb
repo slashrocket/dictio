@@ -14,4 +14,6 @@ class Term < ActiveRecord::Base
 
   validates :name, presence: true
   validates_associated :definitions
+
+  default_scope { order('name ASC') }
 end
