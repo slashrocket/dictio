@@ -2,7 +2,7 @@
   <div class="jumbotron-fluid text-xs-center">
     <div class="container-fluid">
       <h1 class="display-1 jumbo-font">Dictio</h1>
-      <p class="lead">An online dictionary for developers</p>
+      <h4>An online dictionary for developers</h4><br>
       <div class="row">
         <form class="form col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4">
           <%= search_field_tag("search", nil, class: "form-control search-style", placeholder: "Search for a Term") %>
@@ -10,7 +10,12 @@
       </div>
       <br>
       <div class="row">
-        <%= button_to 'Submit a Term', new_term_path, method: :get, class: "btn btn-lg btn-red" %>
+        <% if signed_in? %>
+          <%= button_to 'Submit a Term', new_term_path, method: :get, class: "btn btn-lg btn-red" %>
+        <% else %>
+          <p class="lead">Or, if you'd like to help us out:</p>
+          <%= button_to 'Sign Up to Submit a Term', sign_up_path, method: :get, class: "btn btn-lg btn-red" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -37,6 +42,7 @@
   holmes({
     input: '.form input',
     find: '.card',
+    placeholder: '<div class="text-xs-center"><h3>No Results</h3><%= button_to "Add a Term", new_term_path, method: :get, class: "btn btn-lg" %></div>',
     class: {
       visible: 'visible',
       hidden: 'hidden'
