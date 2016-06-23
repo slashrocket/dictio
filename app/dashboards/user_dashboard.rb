@@ -12,6 +12,7 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     first_name: Field::String,
     last_initial: Field::String,
+    admin: Field::Boolean,
     password: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -30,6 +31,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :first_name,
     :last_initial,
+    :admin,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,6 +41,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :first_name,
     :last_initial,
+    :admin,
     :password,
     :created_at,
     :updated_at,
@@ -54,6 +57,7 @@ class UserDashboard < Administrate::BaseDashboard
     :email,
     :first_name,
     :last_initial,
+    :admin,
     :password,
     :encrypted_password,
     :confirmation_token,
