@@ -1,10 +1,13 @@
 <%= form_for(@term) do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br><br>
+  <fieldset class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </fieldset>
   <%= f.fields_for :definitions do |d| %>
-    <%= d.label :meaning, "Definition" %><br>
-    <%= d.text_area :meaning, placeholder: "Add a definition", rows: 6 %>
+    <fieldset class="form-group">
+      <%= d.label :meaning, "Definition" %><br>
+      <%= d.text_area :meaning, rows: 6, class: "form-control" %>
+    </fieldset>
   <% end %>
-  <br>
-  <%= f.submit 'Submit' %>
+  <%= f.submit 'Submit', class: "btn" %>
 <% end %>

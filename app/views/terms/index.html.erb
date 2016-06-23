@@ -1,12 +1,18 @@
-<% for term in @terms do %>
-  <section>
-    <h2 class="h1"><%= link_to term.name, term %> <span class="h5"><%= link_to 'Edit', edit_term_path(term) %> | <%= link_to 'Delete', term, method: :delete, data: {confirm: 'Are you sure?'} %></span></h2>
-    <% if term.definitions.exists? %>
-      <p><%= term.definitions.first.meaning %></p>
-    <% else %>
-      <%= link_to "Add a Definition", new_term_definition_path(term) %>
+<div class="container">
+  <div class="row">
+    <% for term in @terms do %>
+      <div class="col-sm-4">
+        <h2><%= link_to term.name, term %>
+          <span class="h6"><%= link_to 'Edit', edit_term_path(term) %> | <%= link_to 'Delete', term, method: :delete, data: {confirm: 'Are you sure?'} %></span>
+        </h2>
+        <% if term.definitions.exists? %>
+          <p class="lead"><%= term.definitions.first.meaning %></p>
+        <% else %>
+          <%= link_to "Add a Definition", new_term_definition_path(term) %>
+        <% end %>
+      </div>
     <% end %>
-  </section>
-<% end %>
-<br>
-<%= link_to 'Submit a New Term', new_term_path %>
+  </div>
+  <br>
+  <%= link_to 'Submit a New Term', new_term_path %>
+</div>

@@ -1,15 +1,27 @@
-<div class="fixed top-0 left-0 right-0 px3 pb1 bg-blue border-bottom">
-  <ul class="list-reset">
-    <li class="left h1"><%= link_to "Dictio", root_path, class: "head-font text-decoration-none white align-middle" %></li>
-    <li class="right mt1">
-      <%= search_field_tag("search", nil, class: "input", placeholder: "Search") %>
-    </li>
-    <li class="right mr3 mt2">
-      <% if signed_in? %>
-        <%= current_user.email %> | <%= link_to "Sign out", sign_out_path, method: :delete, class: "text-decoration-none align-bottom" %>
-      <% else %>
-        <%= link_to "Sign in", sign_in_path %>
+<nav class="navbar navbar-light">
+  <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>
+  <ul class="nav navbar-nav">
+    <% if signed_in? %>
+      <li class="nav-item pull-xs-right"></li>
+      <li class="nav-item pull-xs-right">
+        <%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link" %>
+      </li>
+      <li class="nav-item pull-xs-right">
+        <%= content_tag(:span, current_user.email, class: "nav-link") %>
+      </li>
+      <% if current_user.admin? %>
+        <li class="nav-item pull-xs-right">
+          <%= link_to "Admin", admin_root_path, class: "nav-link" %>
+        </li>
       <% end %>
-    </li>
+    <% else %>
+      <li class="nav-item pull-xs-right"></li>
+      <li class="nav-item pull-xs-right">
+        <%= link_to "Sign in", sign_in_path, class: "nav-link" %>
+      </li>
+    <% end %>
   </ul>
-</div>
+  <form class="form pull-md-right">
+    <%= search_field_tag("search", nil, class: "form-control", placeholder: "Search") %>
+  </form>
+</nav>

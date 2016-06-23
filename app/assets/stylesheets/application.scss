@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-  
+
 @import "bootstrap";
 @import 'https://fonts.googleapis.com/css?family=Satisfy|Yantramanav';
 
@@ -23,11 +23,11 @@ $madison: #2E3F4F;
 * {
   font-family: Yantramanav;
   color: $madison;
-  border-color: $madison;
 }
 
-.head-font {
+.brand-font {
   font-family: Satisfy;
+  font-size: 1.5rem;
 }
 
 .bg-blue {
@@ -40,5 +40,5 @@ $madison: #2E3F4F;
 
 a:link, a:hover {
   text-decoration: none;
-  
+
 }
