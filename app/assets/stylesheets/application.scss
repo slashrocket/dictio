@@ -17,55 +17,88 @@
 @import "bootstrap";
 @import 'https://fonts.googleapis.com/css?family=Satisfy|Yantramanav';
 
-$seagull: #73BEDA;
-$madison: #2E3F4F;
+$jasper: #E43B4A;
+$feta: #F1FAEE;
+$aqua: #AADADB;
+$wedgewood: #477C9C;
+$cello: #1E3656;
 
 body {
   font-family: Yantramanav;
-  color: $madison;
+  color: $cello;
+  background-color: $feta;
 }
 
 .brand-font {
   font-family: Satisfy;
   font-size: 1.5rem;
-  color: $madison;
+  color: $cello;
 }
 
 .jumbo-font {
   font-family: Satisfy;
-  color: $madison;
+  color: $cello;
 }
 
 .bg-blue {
-  background-color: $seagull;
+  background-color: $wedgewood;
 }
 
 .bg-navy {
-  background-color: $madison;
+  background-color: $cello;
 }
 
 .navy {
-  color: $madison;
+  color: $cello;
 }
 
-a:link, a:hover {
+.bg-red {
+  background-color: $jasper;
+}
+
+.red {
+  color: $jasper;
+}
+
+a:hover {
+  color: $wedgewood;
   // text-decoration: none;
 }
 
-.pad-top-50 {
-  padding-top: 50px;
+a {
+  color: $cello;
 }
 
-.nav-text {
+.white-text {
   color: white !important;
+}
+
+.feta-text {
+  color: $feta;
+}
+
+.card-text {
+  color: $wedgewood;
 }
 
 .card {
   min-height: 13rem;
+  background-color: $aqua;
 }
 
 .card-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+input, textarea {
+  border-color: $wedgewood !important;
+  background-color: $feta !important;
+  color: $wedgewood !important;
+  font-size: 1.125rem !important;
+}
+
+.hidden {
+  display: none;
 }

@@ -15,4 +15,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require notify
+//= require holmes
+//= require microlight
 //= require_tree .
