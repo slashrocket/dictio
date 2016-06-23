@@ -92,8 +92,12 @@ a {
 input, textarea {
   border-color: $wedgewood !important;
   background-color: white !important;
-  color: $wedgewood !important;
+  color: $cello !important;
   font-size: 1.125rem !important;
+}
+
+input[type="search"] {
+  color: $cello;
 }
 
 .hidden {
