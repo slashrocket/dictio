@@ -12,7 +12,7 @@ class Definition < ActiveRecord::Base
   belongs_to :term
   validates :meaning, presence: true,
                       length: {
-                        minimum: 100, too_short: "requires at least %{count} characters",
+                        minimum: 75, too_short: "requires at least %{count} characters",
                         maximum: 750, too_long: "is limited to %{count} characters."
                       }
 end

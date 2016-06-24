@@ -17,7 +17,7 @@ class DefinitionsControllerTest < ActionController::TestCase
 
   test "post create is successful with valid attributes" do
     sign_in
-    definition_params = { meaning: "Super cool place to learn stuff." }
+    definition_params = { meaning: "An online community that's super cool and helps people learn web development." }
     assert_difference "Definition.count" do
       post :create, term_id: terms(:slashrocket), definition: definition_params
     end
@@ -26,7 +26,7 @@ class DefinitionsControllerTest < ActionController::TestCase
 
   test "post create is unsuccessful with invalid attributes" do
     sign_in
-    definition_params = { meaning: "" }
+    definition_params = { meaning: "Super cool place to learn stuff." }
     assert_no_difference "Definition.count" do
       post :create, term_id: terms(:slashrocket), definition: definition_params
     end
@@ -36,7 +36,7 @@ class DefinitionsControllerTest < ActionController::TestCase
 
   test "put update is successful with valid attributes" do
     sign_in
-    valid_attributes = { meaning: "This definition has a new meaning." }
+    valid_attributes = { meaning: "This definition has a new meaning. Slashrocket loves Slack so much! Oh, and Rails!" }
     put :update, term_id: terms(:slashrocket), id: definitions(:slashrocketDef), definition: valid_attributes
     assert_equal valid_attributes[:meaning], definitions(:slashrocketDef).reload.meaning
     assert_redirected_to term_path(terms(:slashrocket))
