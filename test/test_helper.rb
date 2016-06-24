@@ -8,8 +8,19 @@ require "minitest/reporters"
 Minitest::Reporters.use!
 
 class ActiveSupport::TestCase
+  include FactoryGirl::Syntax::Methods
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+
+  FactoryGirl.define do
+    factory :user do
+      email "john@example.com"
+      first_name "John"
+      last_initial  "D"
+      password "password"
+      admin false
+    end
+  end
 
   # Add more helper methods to be used by all tests here...
   def assert_valid(record, message = nil)
