@@ -16,6 +16,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "get new is successful" do
+    sign_in
     get :new
     assert_kind_of Term, assigns(:term)
     assert_response :success
@@ -30,12 +31,14 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "get edit is successful" do
+    sign_in
     get :edit, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
     assert_response :success
   end
 
   test "post create is successful with valid attributes" do
+    sign_in
     term_params = { name: "Atom" }
     assert_difference "Term.count" do
       post :create, term: term_params
@@ -45,6 +48,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "post create is unsuccessful with invalid attributes" do
+    sign_in
     term_params = { name: "" }
     assert_no_difference "Term.count" do
       post :create, term: term_params
@@ -54,6 +58,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "put update is successful with valid attributes" do
+    sign_in
     valid_attributes = { name: "Atom" }
     put :update, id: terms(:slashrocket), term: valid_attributes
     assert_equal valid_attributes[:name], terms(:slashrocket).reload.name
@@ -62,6 +67,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "put update is unsuccessful with invalid attributes" do
+    sign_in
     invalid_attributes = { name: "" }
     put :update, id: terms(:slashrocket), term: invalid_attributes
     refute_equal invalid_attributes[:name], terms(:slashrocket).reload.name
@@ -70,6 +76,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "delete destroy is successful" do
+    sign_in
     assert_difference "Term.count", -1 do
       delete :destroy, id: terms(:slashrocket)
     end
