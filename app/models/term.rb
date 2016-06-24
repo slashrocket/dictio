@@ -12,12 +12,12 @@ class Term < ActiveRecord::Base
 
   accepts_nested_attributes_for :definitions
 
-  validates :name,  presence: true, 
+  validates :name,  presence: true,
                     length: {
                       minimum: 2, too_short: "requires at least %{count} characters",
                       maximum: 50, too_long: "is limited to %{count} characters."
                     }
-                      
+
   validates_associated :definitions
 
   before_save :capitalize_name
@@ -25,6 +25,9 @@ class Term < ActiveRecord::Base
   default_scope { order('name ASC') }
 
   def capitalize_name
-    self.name = self.name.capitalize
+    if not self.name[0].match /[[:upper:]]/
+      self.name = self.name.capitalize
+    end
   end
+
 end
