@@ -11,6 +11,7 @@ class TermDashboard < Administrate::BaseDashboard
     definitions: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    acronym: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,6 +24,7 @@ class TermDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :id,
+    :acronym,
     :definitions,
     :created_at,
   ].freeze
@@ -33,6 +35,7 @@ class TermDashboard < Administrate::BaseDashboard
     :definitions,
     :id,
     :name,
+    :acronym,
     :created_at,
     :updated_at,
   ].freeze
@@ -43,6 +46,7 @@ class TermDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :definitions,
     :name,
+    :acronym,
   ].freeze
 
   # Overwrite this method to customize how terms are displayed
