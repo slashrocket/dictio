@@ -1,6 +1,9 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
-
+<div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-xl-4 col-xl-offset-4">
+  <h3 class="red-text"><%= t(".title") %></h3>
   <%= render partial: '/sessions/form' %>
-
+  <br>
+  <% if Clearance.configuration.allow_sign_up? %>
+    <p class="lead"><%= link_to t(".sign_up"), sign_up_path %></p>
+  <% end %>
+  <p class="lead"><%= link_to t(".forgot_password"), new_password_path %></p>
 </div>

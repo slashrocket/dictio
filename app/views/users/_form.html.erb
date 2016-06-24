@@ -1,9 +1,8 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
-</div>
-
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-</div>
+<fieldset class="form-group">
+  <%= form.label :email, class: "lead" %><br>
+  <%= form.text_field :email, type: 'email', class: "form-control" %>
+</fieldset>
+<fieldset class="form-group">
+  <%= form.label :password, class: "lead" %><br>
+  <%= form.password_field :password, class: "form-control" %>
+</fieldset>
