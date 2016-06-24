@@ -46,6 +46,12 @@ body {
   border: none;
 }
 
+.btn-cancel {
+ background-color: white !important;
+ color: $jasper !important;
+ border: 1px solid $jasper;
+}
+
 .bg-blue {
   background-color: $wedgewood;
 }

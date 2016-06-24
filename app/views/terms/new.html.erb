@@ -3,5 +3,16 @@
   <h3 class="red-text">Submit a New Term</h3>
   <%= render 'form' %>
   <br>
-  <%= link_to 'Cancel', terms_path %>
-</div>
+  
+<% if @term.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(@term.errors.count, "error") %> prohibited this term from being saved:</b>
+      <ul>
+      <% @term.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  </div>

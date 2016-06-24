@@ -12,7 +12,12 @@ class Term < ActiveRecord::Base
 
   accepts_nested_attributes_for :definitions
 
-  validates :name, presence: true
+  validates :name,  presence: true, 
+                    length: {
+                      minimum: 2, too_short: "requires at least %{count} characters",
+                      maximum: 50, too_long: "is limited to %{count} characters."
+                    }
+                      
   validates_associated :definitions
 
   default_scope { order('name ASC') }

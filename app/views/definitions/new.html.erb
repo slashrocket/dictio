@@ -2,5 +2,17 @@
   <h3 class="red-text">Submit a Definition for <%= @term.name %></h3>
   <%= render 'form' %>
   <br>
-  <%= link_to 'Cancel', terms_path %>
-</div>
+
+
+<% if @definition.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(@definition.errors.count, "error") %> prohibited this term from being saved:</b>
+      <ul>
+      <% @definition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  </div>

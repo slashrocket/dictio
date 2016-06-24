@@ -1,7 +1,18 @@
 <%= form_for(@term) do |f| %>
   <fieldset class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, placeholder: "Term name", class: "form-control" %>
   </fieldset>
-  <%= f.submit 'Submit', class: "btn btn-red" %>
+  <%= f.submit 'Submit', class: "btn btn-red" %>  <%= link_to 'Cancel', terms_path, class: 'btn btn-cancel' %>
 <% end %>
+
+<% if @term.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(@term.errors.count, "error") %> prohibited this term from being saved:</b>
+      <ul>
+      <% @term.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
