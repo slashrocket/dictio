@@ -2,6 +2,7 @@
 class DefinitionsController < ApplicationController
   before_action :set_term
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
 
   def new
     @definition = @term.definitions.new
