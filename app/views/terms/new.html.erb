@@ -1,11 +1,7 @@
 <% provide(:title, "New Term") %>
-<div class="col-lg-8 col-lg-offset-2">
-  <h3>Submit a New Term</h3>
-
-  <% if signed_in? %>
-    <%= render 'form' %>
-    <%= link_to 'Cancel', terms_path %>
-  <% else %>
-    <p>Please create an account to submit a term or <%= link_to 'Sign In', sign_in_path %>.</p>
-  <% end %>
+<div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-xl-4 col-xl-offset-4">
+  <h3 class="red-text">Submit a New Term</h3>
+  <%= render 'form' %>
+  <br>
+  <%= link_to 'Cancel', terms_path %>
 </div>

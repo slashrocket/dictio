@@ -1,6 +1,6 @@
 <%= form_for(@term) do |f| %>
   <fieldset class="form-group">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Term" %><br>
     <%= f.text_field :name, class: "form-control" %>
   </fieldset>
   <%= f.fields_for :definitions do |d| %>
@@ -9,5 +9,5 @@
       <%= d.text_area :meaning, rows: 6, class: "form-control" %>
     </fieldset>
   <% end %>
-  <%= f.submit 'Submit', class: "btn" %>
+  <%= f.submit 'Submit', class: "btn btn-red" %>
 <% end %>
