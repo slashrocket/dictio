@@ -1,14 +1,23 @@
 <%= form_for(@term) do |f| %>
-  <fieldset class="form-group">
-    <%= f.label :name, "Term" %><br>
-    <%= f.text_field :name, placeholder: "Term name", class: "form-control" %>
-  </fieldset>
+  <div class="row">
+    <div class="col-lg-8">
+      <fieldset class="form-group">
+        <%= f.label :name, "Term" %>
+        <%= f.text_field :name, placeholder: "Term name", class: "form-control" %>
+      </fieldset>
+    </div>
+    <div class="col-lg-4">
+      <fieldset class="form-group">
+        <%= f.label :acronym, "Acronym (Optional)" %>
+        <%= f.text_field :acronym, placeholder: "Acronym", class: "form-control" %>
+      </fieldset>
+    </div>
+  </div>
   <%= f.fields_for :definitions do |d| %>
     <fieldset class="form-group">
-      <%= d.label :meaning, "Definition" %><br>
+      <%= d.label :meaning, "Definition" %>
       <%= d.text_area :meaning, rows: 6,  placeholder: "Definition", class: "form-control" %>
     </fieldset>
   <% end %>
   <%= f.submit 'Submit', class: "btn btn-red" %> <%= link_to 'Cancel', terms_path, class: 'btn btn-white' %>
 <% end %>
-  
