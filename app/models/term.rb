@@ -20,13 +20,13 @@ class Term < ActiveRecord::Base
 
   validates_associated :definitions
 
-  before_save :capitalize_name
+  before_save :titleize_name
 
   default_scope { order('name ASC') }
 
-  def capitalize_name
-    if not self.name[0].match /[[:upper:]]/
-      self.name = self.name.capitalize
+  def titleize_name
+    if self.name[1].match /[[:lower:]]/
+      self.name = self.name.titleize
     end
   end
 
