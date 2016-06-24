@@ -20,5 +20,11 @@ class Term < ActiveRecord::Base
                       
   validates_associated :definitions
 
+  before_save :capitalize_name
+
   default_scope { order('name ASC') }
+
+  def capitalize_name
+    self.name = self.name.capitalize
+  end
 end
