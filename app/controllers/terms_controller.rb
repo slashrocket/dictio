@@ -1,6 +1,7 @@
 # Term Controller
 class TermsController < ApplicationController
   before_action :set_term, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :edit, :update, :destroy]
 
   def index
     @terms = Term.all
