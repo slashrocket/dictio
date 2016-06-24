@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :terms do
     resources :definitions, only: [:new, :create, :edit, :update, :destroy]
   end
+  
+  resources :users,
+    controller: 'users',
+    only: 'create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

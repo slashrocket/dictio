@@ -4,8 +4,20 @@
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
-    <%= form.submit 'Submit', class: "btn btn-red" %>
+    <%= form.submit 'Sign Up', class: "btn btn-red" %>
   <% end %>
   <br>
-  <p class="lead"><%= link_to t(".sign_in"), sign_in_path %></p>
+  <p class="lead"><%= link_to t(".sign_in"), sign_in_path, class: 'btn btn-white' %></p>
+  
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(@user.errors.count, "error") %> prohibited this term from being saved:</b>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
+

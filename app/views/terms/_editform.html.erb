@@ -3,7 +3,7 @@
     <%= f.label :name %><br>
     <%= f.text_field :name, placeholder: "Term name", class: "form-control" %>
   </fieldset>
-  <%= f.submit 'Submit', class: "btn btn-red" %>  <%= link_to 'Cancel', terms_path, class: 'btn btn-cancel' %>
+  <%= f.submit 'Submit', class: "btn btn-red" %>  <%= link_to 'Cancel', terms_path, class: 'btn btn-white' %>
 <% end %>
 
 <% if @term.errors.any? %>
