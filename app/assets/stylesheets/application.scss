@@ -76,16 +76,18 @@ a {
 
 .card {
   min-height: 13rem;
-  background-color: $feta;
+  background-color: white;
+  border-color: $aqua;
 }
 
 .card-footer {
-  background-color: $wedgewood;
+  background-color: $aqua;
   position: absolute;
   bottom: 0;
   width: 100%;
+  border-top: none;
   a {
-    color: $feta;
+    color: $wedgewood;
   }
 }
 
