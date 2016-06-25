@@ -18,11 +18,7 @@ class Term < ActiveRecord::Base
                       maximum: 50, too_long: "is limited to %{count} characters."
                     }
 
-  validates :acronym, presence: true,
-                      length: {
-                        minimum: 2, too_short: "requires at least %{count} characters",
-                        maximum: 15, too_long: "is limited to %{count} characters."
-                      }
+  validates :acronym, length: { in: 2..15 }, allow_blank: true
 
   validates_associated :definitions
 
