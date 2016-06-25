@@ -14,9 +14,15 @@ class Term < ActiveRecord::Base
 
   validates :name,  presence: true,
                     length: {
-                      minimum: 2, too_short: "requires at least %{count} characters",
+                      minimum: 4, too_short: "requires at least %{count} characters",
                       maximum: 50, too_long: "is limited to %{count} characters."
                     }
+
+  validates :acronym, presence: true,
+                      length: {
+                        minimum: 2, too_short: "requires at least %{count} characters",
+                        maximum: 15, too_long: "is limited to %{count} characters."
+                      }
 
   validates_associated :definitions
 
