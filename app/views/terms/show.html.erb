@@ -4,6 +4,25 @@
 <ol>
   <% for definition in @term.definitions %>
     <li class="lead"><p><%= definition.meaning %></p></li>
+
+    <%
+      # You can't vote if it is your definition,
+      # you are not logged in,
+      # or you have already voted on this item
+
+      unless definition.user_id == current_user.id ||
+      !signed_in? ||
+      current_user.voted_on?(definition)
+    %>
+
+    <%= link_to "Up", url: term_definition_votes_path(definition.term, definition, vote: :true), method: :post, remote: true %>
+    /
+    <%= link_to "Down", url: term_definition_votes_path(definition.term, definition, vote: :false), method: :post, remote: true %>
+
+    <% end %>
+
+    Votes: <%= definition.votes_for - definition.votes_against %>
+
   <% end %>
 </ol>
 
