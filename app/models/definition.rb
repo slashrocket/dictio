@@ -10,6 +10,9 @@
 #
 class Definition < ActiveRecord::Base
   belongs_to :term
+
+  acts_as_voteable
+  
   validates :meaning, presence: true,
                       length: {
                         minimum: 75, too_short: "requires at least %{count} characters",
