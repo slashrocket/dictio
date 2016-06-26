@@ -20,6 +20,8 @@ class TermsController < ApplicationController
 
   def create
     @term = Term.new(term_params)
+    @term.user_id = current_user.id
+    @term.definitions.first.user_id = current_user.id
     if @term.save
       flash[:success] = 'Term created!'
       redirect_to terms_path
@@ -50,6 +52,6 @@ class TermsController < ApplicationController
   end
 
   def term_params
-    params.require(:term).permit(:name, definitions_attributes: [:meaning])
+    params.require(:term).permit(:name, :acronym, :user_id, definitions_attributes: [:meaning, :user_id])
   end
 end

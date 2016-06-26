@@ -10,6 +10,7 @@ class DefinitionsController < ApplicationController
 
   def create
     @definition = @term.definitions.new(definition_params)
+    @definition.user_id = current_user.id
     if @definition.save
       flash[:success] = 'Definition created!'
       redirect_to @term
@@ -47,6 +48,6 @@ class DefinitionsController < ApplicationController
   end
 
   def definition_params
-    params.require(:definition).permit(:meaning)
+    params.require(:definition).permit(:meaning, :user_id)
   end
 end
