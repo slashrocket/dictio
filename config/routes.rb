@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   resources :terms do
     resources :definitions, only: [:new, :create, :edit, :update, :destroy] do
-      post :votes
+      member do
+        post :vote_up
+        post :vote_down
+      end
     end
   end
 

@@ -37,6 +37,18 @@ class DefinitionsController < ApplicationController
     redirect_to term_url(@term)
   end
 
+  def vote_up
+    vote = Vote.new
+    current_user.vote_for(@definition)
+    vote.save
+  end
+
+  def vote_down
+    Vote.new
+    current_user.vote_against(@definition)
+    vote.save
+  end
+
   private
 
   def set_term

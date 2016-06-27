@@ -15,9 +15,9 @@
       current_user.voted_on?(definition)
     %>
 
-    <%= link_to "Up", url: term_definition_votes_path(definition.term, definition, vote: :true), method: :post, remote: true %>
+    <%= link_to "Up", url: vote_up_term_definition_path(definition.term, definition), method: :post, remote: true %>
     /
-    <%= link_to "Down", url: term_definition_votes_path(definition.term, definition, vote: :false), method: :post, remote: true %>
+    <%= link_to "Down", url: vote_down_term_definition_path(definition.term, definition), method: :post, remote: true %>
 
     <% end %>
 
