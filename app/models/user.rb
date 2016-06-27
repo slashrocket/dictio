@@ -17,4 +17,8 @@
 
 class User < ActiveRecord::Base
   include Clearance::User
+  validates :username, presence: true,
+                        length: { in: 2..15 },
+                        uniqueness: { scope: :username }
+  
 end

@@ -15,6 +15,7 @@ class ActiveSupport::TestCase
   FactoryGirl.define do
     factory :user do
       email "john@example.com"
+      username "slashrocket"
       first_name "John"
       last_initial  "D"
       password "password"
