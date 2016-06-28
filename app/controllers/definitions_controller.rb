@@ -1,7 +1,7 @@
 # Definition Controller
 class DefinitionsController < ApplicationController
   before_action :set_term
-  before_action :set_definition, only: [:show, :edit, :update, :destroy]
+  before_action :set_definition, only: [:edit, :update, :destroy, :vote_up, :vote_down]
   before_action :require_login
 
   def new
@@ -38,15 +38,13 @@ class DefinitionsController < ApplicationController
   end
 
   def vote_up
-    vote = Vote.new
     current_user.vote_for(@definition)
-    vote.save
+    render 'terms/show'
   end
 
   def vote_down
-    Vote.new
     current_user.vote_against(@definition)
-    vote.save
+    render 'terms/show'
   end
 
   private

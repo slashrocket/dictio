@@ -6,18 +6,14 @@
     <li class="lead"><p><%= definition.meaning %></p></li>
 
     <%
-      # You can't vote if it is your definition,
-      # you are not logged in,
-      # or you have already voted on this item
-
       unless definition.user_id == current_user.id ||
       !signed_in? ||
       current_user.voted_on?(definition)
     %>
 
-    <%= link_to "Up", url: vote_up_term_definition_path(definition.term, definition), method: :post, remote: true %>
+    <%= link_to "Up", vote_up_term_definition_path(definition.term, definition), method: :post, remote: true %>
     /
-    <%= link_to "Down", url: vote_down_term_definition_path(definition.term, definition), method: :post, remote: true %>
+    <%= link_to "Down", vote_down_term_definition_path(definition.term, definition), method: :post, remote: true %>
 
     <% end %>
 
