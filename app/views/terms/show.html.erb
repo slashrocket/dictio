@@ -6,7 +6,7 @@
     <li class="lead"><p><%= definition.meaning %></p></li>
 
     <%
-      unless definition.user_id == current_user.id ||
+      unless definition.user_id == current_user ||
       !signed_in? ||
       current_user.voted_on?(definition)
     %>
