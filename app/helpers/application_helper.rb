@@ -1,12 +1,12 @@
 # Application Helper
 module ApplicationHelper
     
-    def meta_tag(tag, text)
-        content_for :"meta_#{tag}", text
+    def meta_name(name, text)
+        content_for :"meta_#{name}", text
     end
     
-    def yield_meta_tag(tag, default_text='')
-        content_for?(:"meta_#{tag}") ? content_for(:"meta_#{tag}") : default_text
+    def yield_meta_name(name, default_text='')
+        content_for?(:"meta_#{name}") ? content_for(:"meta_#{name}") : default_text
     end
         
     
