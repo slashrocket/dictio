@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626154309) do
+ActiveRecord::Schema.define(version: 20160716192118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20160626154309) do
   create_table "definitions", force: :cascade do |t|
     t.text     "meaning"
     t.integer  "term_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.integer  "score",      default: 0, null: false
   end
 
   add_index "definitions", ["term_id"], name: "index_definitions_on_term_id", using: :btree
