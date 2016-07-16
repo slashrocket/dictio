@@ -24,24 +24,6 @@
               id: "up-#{definition.id}"
             %>
           <% end %>
-          /
-          <% if current_user.voted_against?(definition) %>
-            <%=
-              link_to "Down",
-              unvote_term_definition_path(definition.term, definition),
-              method: :post,
-              remote: true,
-              id: "down-#{definition.id}"
-            %>
-          <% else %>
-            <%=
-              link_to "Down",
-              vote_down_term_definition_path(definition.term, definition),
-              method: :post,
-              remote: true,
-              id: "down-#{definition.id}"
-            %>
-          <% end %>
         </span>
       <% end %>
 
