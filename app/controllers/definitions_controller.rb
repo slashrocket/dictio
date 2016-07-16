@@ -39,6 +39,8 @@ class DefinitionsController < ApplicationController
 
   def vote_up
     current_user.vote_for(@definition)
+    @definition.score = @definition.plusminus
+    @definition.save!
     respond_to do |format|
       format.js
     end
@@ -46,6 +48,8 @@ class DefinitionsController < ApplicationController
 
   def vote_down
     current_user.vote_against(@definition)
+    @definition.score = @definition.plusminus
+    @definition.save!
     respond_to do |format|
       format.js
     end
