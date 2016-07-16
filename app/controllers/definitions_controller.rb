@@ -39,12 +39,18 @@ class DefinitionsController < ApplicationController
 
   def vote_up
     current_user.vote_for(@definition)
-    render 'terms/show'
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
   end
 
   def vote_down
     current_user.vote_against(@definition)
-    render 'terms/show'
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
   end
 
   private

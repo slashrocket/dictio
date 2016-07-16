@@ -10,14 +10,14 @@
       !signed_in? ||
       current_user.voted_on?(definition)
     %>
-
-    <%= link_to "Up", vote_up_term_definition_path(definition.term, definition), method: :post, remote: true %>
-    /
-    <%= link_to "Down", vote_down_term_definition_path(definition.term, definition), method: :post, remote: true %>
-
+      <span id="voting-<%= definition.id %>">
+        <%= link_to "Up", vote_up_term_definition_path(definition.term, definition), method: :post, remote: true %>
+        /
+        <%= link_to "Down", vote_down_term_definition_path(definition.term, definition), method: :post, remote: true %>
+      </span>
     <% end %>
 
-    Score: <%= definition.plusminus %>
+    <span id="score-<%= definition.id %>">Score: <%= definition.plusminus %></span>
 
   <% end %>
 </ol>
