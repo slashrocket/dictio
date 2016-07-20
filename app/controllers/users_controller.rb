@@ -14,14 +14,12 @@ class UsersController < ApplicationController
     
     def user_from_params
         user_params = params[:user] || Hash.new
-        first_name = user_params.delete(:first_name)
-        last_initial = user_params.delete(:last_initial)
+        username = user_params.delete(:username)
         email = user_params.delete(:email)
         password = user_params.delete(:password)
     
     Clearance.configuration.user_model.new(user_params).tap do |user|
-        user.first_name = first_name
-        user.last_initial = last_initial
+        user.username = username
         user.email = email
         user.password = password
     end

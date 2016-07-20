@@ -1,4 +1,13 @@
 <% provide(:title, @term.name) %>
+<% for definition in @term.definitions %>
+<!-- Facebook / Open Graph -->
+<% meta_name :'og:title', @term.name %>
+<% meta_name :'og:description', definition.meaning %>
+<!-- Twitter -->
+<% meta_name :'twitter:title', @term.name %>
+<% meta_name :'twitter:description', definition.meaning %>
+<% end %>
+
 <h1 class="red-text text-xs-center"><%= @term.name %></h1>
 <div class="col-xl-4 col-xl-offset-4">
   <ol>

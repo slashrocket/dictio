@@ -48,12 +48,14 @@ ActiveRecord::Schema.define(version: 20160716192118) do
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128
     t.boolean  "admin",                          default: false, null: false
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["first_name"], name: "index_users_on_first_name", using: :btree
   add_index "users", ["last_initial"], name: "index_users_on_last_initial", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "votes", force: :cascade do |t|
     t.boolean  "vote",          default: false, null: false
