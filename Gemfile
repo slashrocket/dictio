@@ -37,7 +37,11 @@ gem 'bourbon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Need this to test authentication
 gem 'factory_girl_rails'
+
+# Add voting capabilities
+gem 'thumbs_up'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution & get a debug console

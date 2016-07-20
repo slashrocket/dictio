@@ -39,7 +39,7 @@ class TermsControllerTest < ActionController::TestCase
 
   test "post create is successful with valid attributes" do
     sign_in
-    term_params = { name: "Atom" }
+    term_params = { name: "Test Driven Development", acronym: "TDD", user_id: users(:one).id, definitions_attributes: [meaning: definitions(:slashrocketDef).meaning, user_id: users(:one).id] }
     assert_difference "Term.count" do
       post :create, term: term_params
     end
@@ -49,7 +49,7 @@ class TermsControllerTest < ActionController::TestCase
 
   test "post create is unsuccessful with invalid attributes" do
     sign_in
-    term_params = { name: "" }
+    term_params = { name: "", user_id: users(:one).id, definitions_attributes: [meaning: definitions(:slashrocketDef).meaning, user_id: users(:one).id] }
     assert_no_difference "Term.count" do
       post :create, term: term_params
     end

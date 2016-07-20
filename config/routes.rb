@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   root 'terms#index'
 
   resources :terms do
-    resources :definitions, only: [:new, :create, :edit, :update, :destroy]
+    resources :definitions, only: [:new, :create, :edit, :update, :destroy] do
+      member do
+        post :vote_up
+        post :unvote
+      end
+    end
   end
-  
+
   resources :users,
     controller: 'users',
     only: 'create'

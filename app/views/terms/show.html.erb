@@ -1,11 +1,40 @@
 <% provide(:title, @term.name) %>
 <h1 class="red-text text-xs-center"><%= @term.name %></h1>
 <div class="col-xl-4 col-xl-offset-4">
-<ol>
-  <% for definition in @term.definitions %>
-    <li class="lead"><p><%= definition.meaning %></p></li>
-  <% end %>
-</ol>
+  <ol>
+    <% for definition in @term.definitions %>
+      <li class="lead"><p><%= definition.meaning %></p></li>
 
-<h5 class="text-xs-center"><%= link_to "Add a New Definition", new_term_definition_path(@term) %></h5>
+      <% unless definition.user_id == current_user || !signed_in? %>
+        <span id="voting-<%= definition.id %>">
+          <% if current_user.voted_for?(definition) %>
+            <%=
+              link_to "Up",
+              unvote_term_definition_path(definition.term, definition),
+              method: :post,
+              remote: true,
+              id: "up-#{definition.id}"
+            %>
+          <% else %>
+            <%=
+              link_to "Up",
+              vote_up_term_definition_path(definition.term, definition),
+              method: :post,
+              remote: true,
+              id: "up-#{definition.id}"
+            %>
+          <% end %>
+        </span>
+      <% end %>
+
+      <span id="score-<%= definition.id %>">
+        Score: <%= definition.score %>
+      </span>
+
+    <% end %>
+  </ol>
+
+  <h5 class="text-xs-center">
+    <%= link_to "Add a New Definition", new_term_definition_path(@term) %>
+  </h5>
 </div>
