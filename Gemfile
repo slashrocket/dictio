@@ -45,9 +45,10 @@ gem 'thumbs_up'
 
 group :production do
   gem 'rails_12factor'
+  gem 'rollbar'
+  gem 'newrelic_rpm'
+  gem 'oj', '~> 2.12.14'
 end
-
-gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution & get a debug console

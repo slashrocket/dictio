@@ -137,6 +137,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     normalize-rails (3.0.3)
+    oj (2.12.14)
     pg (0.18.4)
     pkg-config (1.1.7)
     puma (3.4.0)
@@ -175,6 +176,8 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    rollbar (2.12.0)
+      multi_json
     ruby-progressbar (1.8.1)
     sass (3.4.22)
     sass-rails (5.0.4)
@@ -234,10 +237,12 @@ DEPENDENCIES
   jquery-rails
   minitest-reporters
   newrelic_rpm
+  oj (~> 2.12.14)
   pg
   puma
   rails (= 4.2.6)
   rails_12factor
+  rollbar
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simplecov
