@@ -43,11 +43,12 @@ gem 'factory_girl_rails'
 # Add voting capabilities
 gem 'thumbs_up'
 
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
+
 group :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm'
-  gem 'rollbar'
-  gem 'oj', '~> 2.12.14'
 end
 
 group :development, :test do
