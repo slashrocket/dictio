@@ -47,6 +47,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution & get a debug console
   gem 'byebug'
