@@ -43,6 +43,10 @@ gem 'factory_girl_rails'
 # Add voting capabilities
 gem 'thumbs_up'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution & get a debug console
   gem 'byebug'
