@@ -10,7 +10,6 @@
       <% else %>
         <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link white-text" %></li>
       <% end %>
-      <li class="nav-item pull-md-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "nav-link white-text") %></li>
     </ul>
   </div>
 </div>
@@ -20,3 +19,8 @@
     <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>
   </div>
 </div>
+<nav class="navbar navbar-fixed-bottom bg-white">
+  <ul class="nav">
+    <li class="nav-item pull-md-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "blue-text") %></li>
+  </ul>
+</nav>
