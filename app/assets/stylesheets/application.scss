@@ -60,6 +60,10 @@ body {
   background-color: $cello;
 }
 
+.bg-white {
+  background-color: white;
+}
+
 a:hover {
   color: $wedgewood;
 }
@@ -74,6 +78,10 @@ a {
 
 .red-text {
   color: $jasper !important;
+}
+
+.blue-text {
+  color: $wedgewood !important;
 }
 
 .m-y-2 {
