@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :require_login, only: :show
+    
     
     def create
         @user = user_from_params
