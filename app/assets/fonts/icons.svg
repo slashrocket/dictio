@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2016-7-22: Created with FontForge (http://fontforge.org)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20160407 at Fri Jul 22 16:27:27 2016
+ By Sean O
+Copyright (c) 2016, Sean O
+</metadata>
+<defs>
+<font id="icons" horiz-adv-x="200" >
+  <font-face 
+    font-family="icons"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0.000207571 -59.6104 401.354 448"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+0020-F100"
+  />
+    <missing-glyph />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="uniF100" unicode="&#xf100;" horiz-adv-x="512" 
+d="M170.004 414.996c16.9434 44.0254 44.4307 43.9854 61.3584 0l167.312 -434.741c8.47363 -22.0166 -3.81934 -39.8652 -27.3242 -39.8652h-341.333c-23.5645 0 -35.8105 17.8154 -27.3242 39.8652z" />
+  </font>
+</defs></svg>

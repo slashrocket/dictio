@@ -46,6 +46,8 @@ gem 'thumbs_up'
 gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 
+gem 'fontcustom'
+
 group :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm'

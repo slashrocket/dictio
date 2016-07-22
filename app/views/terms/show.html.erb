@@ -22,7 +22,8 @@
               unvote_term_definition_path(definition.term, definition),
               method: :post,
               remote: true,
-              id: "up-#{definition.id}"
+              id: "up-#{definition.id}",
+              class: "voted"
             %>
           <% else %>
             <%=
