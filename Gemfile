@@ -43,6 +43,14 @@ gem 'factory_girl_rails'
 # Add voting capabilities
 gem 'thumbs_up'
 
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution & get a debug console
   gem 'byebug'
