@@ -123,3 +123,11 @@ input[type="search"] {
 .hidden {
   display: none;
 }
+
+.unvoted {
+  color: $aqua;
+}
+
+.icon-vote:hover {
+  color: $cello;
+}

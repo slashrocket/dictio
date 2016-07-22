@@ -12,22 +12,21 @@
 <div class="col-xl-4 col-xl-offset-4">
   <ol>
     <% for definition in @term.definitions %>
-      <li class="lead"><p><%= definition.meaning %></p></li>
+      <li class="lead"><span><%= definition.meaning %></span></li>
 
       <% unless definition.user_id == current_user || !signed_in? %>
         <span id="voting-<%= definition.id %>">
           <% if current_user.voted_for?(definition) %>
             <%=
-              link_to "Up",
+              link_to ("<span class='icon-vote voted'></span>").html_safe,
               unvote_term_definition_path(definition.term, definition),
               method: :post,
               remote: true,
-              id: "up-#{definition.id}",
-              class: "voted"
+              id: "up-#{definition.id}"
             %>
           <% else %>
             <%=
-              link_to "Up",
+              link_to ("<span class='icon-vote unvoted'></span>").html_safe,
               vote_up_term_definition_path(definition.term, definition),
               method: :post,
               remote: true,
@@ -37,10 +36,8 @@
         </span>
       <% end %>
 
-      <span id="score-<%= definition.id %>">
-        Score: <%= definition.score %>
-      </span>
-
+      <span id="score-<%= definition.id %>"><%= definition.score %></span>
+      <br><br>
     <% end %>
   </ol>
 
