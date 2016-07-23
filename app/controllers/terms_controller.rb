@@ -24,7 +24,7 @@ class TermsController < ApplicationController
     @term.definitions.first.user_id = current_user.id
     if @term.save
       flash[:success] = 'Term created!'
-      redirect_to terms_path
+      redirect_to @term
     else
       render 'new'
     end
