@@ -40,7 +40,7 @@ class DefinitionsController < ApplicationController
   private
 
   def set_term
-    @term = Term.find(params[:term_id])
+    @term = Term.friendly.find(params[:term_id])
   end
 
   def set_definition
