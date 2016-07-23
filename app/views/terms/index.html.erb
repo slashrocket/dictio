@@ -1,43 +1,41 @@
-<!-- <div class="container-fluid"> -->
-  <div class="jumbotron-fluid text-xs-center">
-    <div class="container-fluid">
-      <h1 class="display-1 jumbo-font">Dictio</h1>
-      <h4>A dictionary for developers</h4><br>
-      <div class="row">
-        <form class="form col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4">
-          <%= search_field_tag("search", nil, class: "form-control search-style", placeholder: "Search for a Term") %>
-        </form>
-      </div>
-      <br>
-      <div class="row">
-        <% if signed_in? %>
-          <%= button_to 'Submit a Term', new_term_path, method: :get, class: "btn btn-lg btn-red" %>
-        <% else %>
-          <p class="lead">Or, if you'd like to help us out:</p>
-          <%= button_to 'Sign Up to Submit a Term', sign_up_path, method: :get, class: "btn btn-lg btn-red" %>
-        <% end %>
-      </div>
+<div class="jumbotron-fluid text-xs-center">
+  <div class="container-fluid">
+    <h1 class="display-1 jumbo-font">Dictio</h1>
+    <h4>A dictionary for developers</h4><br>
+    <div class="row">
+      <form class="form col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4">
+        <%= search_field_tag("search", nil, class: "form-control search-style", placeholder: "Search for a Term") %>
+      </form>
     </div>
-  </div>
-  <hr class="m-y-2">
-  <div class="row">
-    <div class="container">
-      <% for term in @terms do %>
-        <div class="col-lg-6 col-xl-4 visible">
-          <div class="card">
-            <div class="card-block">
-              <h3 class="card-title"><%= link_to truncate(term.name, length: 24), term %></h3>
-              <p class="card-text"><%= truncate(term.definitions.first.meaning, length: 100) %></p>
-            </div>
-            <div class="card-footer">
-              <%= link_to "More", term %>
-            </div>
-          </div>
-        </div>
+    <br>
+    <div class="row">
+      <% if signed_in? %>
+        <%= button_to 'Submit a Term', new_term_path, method: :get, class: "btn btn-lg btn-red" %>
+      <% else %>
+        <p class="lead">Or, if you'd like to help us out:</p>
+        <%= button_to 'Sign Up to Submit a Term', sign_up_path, method: :get, class: "btn btn-lg btn-red" %>
       <% end %>
     </div>
   </div>
-<!-- </div> -->
+</div>
+<hr class="m-y-2">
+<div class="row">
+  <div class="container">
+    <% for term in @terms do %>
+      <div class="col-lg-6 col-xl-4 visible">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title"><%= link_to truncate(term.name, length: 24), term %></h3>
+            <p class="card-text"><%= truncate(term.definitions.first.meaning, length: 100) %></p>
+          </div>
+          <div class="card-footer">
+            <%= link_to "More", term %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <script type="text/javascript">
   holmes({
     input: '.form input',
