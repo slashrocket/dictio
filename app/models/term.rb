@@ -8,6 +8,9 @@
 #  updated_at :datetime         not null
 #
 class Term < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   has_many :definitions, dependent: :destroy
 
   accepts_nested_attributes_for :definitions

@@ -5,32 +5,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <!-- Facebook / Open Graph --> 
+
+  <!-- Facebook / Open Graph -->
   <meta property="og:url" content="<%= root_url %>" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="<%= yield_meta_name(:'og:title', 'Dictio') %>" />
   <meta property="og:description" content="<%= yield_meta_name(:'og:description', 'Web Development Dictionary') %>" />
   <meta property="og:site_name" content="Dictio" />
   <meta property="og:locale" content="en_US" />
-  
+
   <!-- Twitter Card -->
   <!-- Update these upon changing URL -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:domain" value="<%= root_url %>" />
   <meta name="twitter:title" value="<%= yield_meta_name(:'twitter:title', 'Dictio') %>" />
-  <meta name="twitter:description" value="<%= yield_meta_name(:'twitter:description', '') %>" />  
+  <meta name="twitter:description" value="<%= yield_meta_name(:'twitter:description', '') %>" />
   <meta name="twitter:url" value="<%= root_url %>" />
-  <!-- 
+  <!--
   <meta name="twitter:label1" value="Score" />
   <meta name="twitter:data1" value="2" />
   <meta name="twitter:label2" value="Favorites" />
   <meta name="twitter:data2" value="1" />
   -->
-  
+
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.png' %>
+  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
