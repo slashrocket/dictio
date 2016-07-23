@@ -13,6 +13,7 @@ class Term < ActiveRecord::Base
   accepts_nested_attributes_for :definitions
 
   validates :name,  presence: true,
+                    uniqueness: {case_sensitive: false },
                     length: {
                       minimum: 4, too_short: "requires at least %{count} characters",
                       maximum: 50, too_long: "is limited to %{count} characters."

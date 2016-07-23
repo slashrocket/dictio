@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   root 'terms#index'
 
-  resources :terms do
-    resources :definitions, only: [:new, :create, :edit, :update, :destroy] do
+  resources :terms, except: [:edit, :update, :destroy] do
+    resources :definitions, only: [:new, :create] do
       member do
         post :vote_up
         post :unvote

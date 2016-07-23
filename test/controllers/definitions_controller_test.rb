@@ -9,6 +9,7 @@ class DefinitionsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    skip "Unused controller action"
     sign_in
     get :edit, id: definitions(:slashrocketDef), term_id: terms(:slashrocket)
     assert_equal definitions(:slashrocketDef), assigns(:definition)
@@ -35,6 +36,7 @@ class DefinitionsControllerTest < ActionController::TestCase
   end
 
   test "put update is successful with valid attributes" do
+    skip "Unused controller action"
     sign_in
     valid_attributes = { meaning: "This definition has a new meaning. Slashrocket loves Slack so much! Oh, and Rails!" }
     put :update, term_id: terms(:slashrocket), id: definitions(:slashrocketDef), definition: valid_attributes
@@ -43,6 +45,7 @@ class DefinitionsControllerTest < ActionController::TestCase
   end
 
   test "put update is unsuccessful with invalid attributes" do
+    skip "Unused controller action"
     sign_in
     invalid_attributes = { meaning: "" }
     put :update, term_id: terms(:slashrocket), id: definitions(:slashrocketDef), definition: invalid_attributes
@@ -52,6 +55,7 @@ class DefinitionsControllerTest < ActionController::TestCase
   end
 
   test "delete destroy is successful" do
+    skip "Unused controller action"
     sign_in
     assert_difference "Definition.count", -1 do
       delete :destroy, term_id: terms(:slashrocket), id: definitions(:slashrocketDef)

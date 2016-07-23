@@ -27,10 +27,15 @@ class TermTest < ActiveSupport::TestCase
     assert_includes invalid_term.errors[:name], "can't be blank"
   end
 
-  test 'should successfully save a term' do
+  test 'should not save a term with a duplicate name' do
     term = Term.new
     term.name = terms(:slashrocket).name
-    assert term.save, 'Term did not save.'
+    assert_not term.save, 'Term saved.'
   end
-
+  
+  test 'should save a term that is unique' do
+    term = Term.new
+    term.name = "Russell"
+    assert term.save, 'Term did not saved.'
+  end
 end

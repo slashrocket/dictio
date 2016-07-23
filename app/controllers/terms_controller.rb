@@ -1,7 +1,8 @@
 # Term Controller
 class TermsController < ApplicationController
-  before_action :set_term, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, only: [:new, :edit, :update, :destroy]
+  before_action :set_term, only: :show
+  before_action :require_login, only: :new
+  
 
   def index
     @terms = Term.all
@@ -15,9 +16,6 @@ class TermsController < ApplicationController
     @term.definitions.new
   end
 
-  def edit
-  end
-
   def create
     @term = Term.new(term_params)
     @term.user_id = current_user.id
@@ -28,21 +26,6 @@ class TermsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def update
-    if @term.update_attributes(term_params)
-      flash[:success] = 'Term updated!'
-      redirect_to @term
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @term.destroy
-    flash[:error] = 'Term deleted!'
-    redirect_to root_url
   end
 
   private

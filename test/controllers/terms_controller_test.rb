@@ -31,6 +31,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "get edit is successful" do
+    skip "to my Lou"
     sign_in
     get :edit, id: terms(:slashrocket)
     assert_equal terms(:slashrocket), assigns(:term)
@@ -58,6 +59,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "put update is successful with valid attributes" do
+    skip "Unused controller action"
     sign_in
     valid_attributes = { name: "Atom" }
     put :update, id: terms(:slashrocket), term: valid_attributes
@@ -67,6 +69,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "put update is unsuccessful with invalid attributes" do
+    skip "Unused controller action"
     sign_in
     invalid_attributes = { name: "" }
     put :update, id: terms(:slashrocket), term: invalid_attributes
@@ -76,6 +79,7 @@ class TermsControllerTest < ActionController::TestCase
   end
 
   test "delete destroy is successful" do
+    skip "Unused controller action"
     sign_in
     assert_difference "Term.count", -1 do
       delete :destroy, id: terms(:slashrocket)

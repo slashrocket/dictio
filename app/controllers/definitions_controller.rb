@@ -1,7 +1,7 @@
 # Definition Controller
 class DefinitionsController < ApplicationController
   before_action :set_term
-  before_action :set_definition, only: [:edit, :update, :destroy, :vote_up, :unvote]
+  before_action :set_definition, only: [:vote_up, :unvote]
   before_action :require_login
 
   def new
@@ -17,24 +17,6 @@ class DefinitionsController < ApplicationController
     else
       render action: 'new'
     end
-  end
-
-  def edit
-  end
-
-  def update
-    if @definition.update_attributes(definition_params)
-      flash[:success] = 'Definition updated!'
-      redirect_to @term
-    else
-      render action: 'edit'
-    end
-  end
-
-  def destroy
-    @definition.destroy
-    flash[:error] = 'Definition deleted!'
-    redirect_to term_url(@term)
   end
 
   def vote_up
