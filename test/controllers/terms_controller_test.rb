@@ -43,7 +43,7 @@ class TermsControllerTest < ActionController::TestCase
     assert_difference "Term.count" do
       post :create, term: term_params
     end
-    assert_redirected_to terms_path
+    assert_redirected_to Term.last
     assert_equal 'Term created!', flash[:success]
   end
 
