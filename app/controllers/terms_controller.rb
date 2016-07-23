@@ -2,7 +2,7 @@
 class TermsController < ApplicationController
   before_action :set_term, only: :show
   before_action :require_login, only: :new
-  
+
 
   def index
     @terms = Term.all
@@ -31,7 +31,7 @@ class TermsController < ApplicationController
   private
 
   def set_term
-    @term = Term.find(params[:id])
+    @term = Term.friendly.find(params[:id])
   end
 
   def term_params

@@ -48,6 +48,8 @@ gem 'oj', '~> 2.12.14'
 
 gem 'fontcustom'
 
+gem 'friendly_id', '~> 5.1.0'
+
 group :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm'
