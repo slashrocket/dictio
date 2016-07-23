@@ -1,5 +1,19 @@
-<% if signed_in? %>
-
-   
-
-<% end %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 ">
+            <h1 class="red-text text-xs-center"><%= current_user.username %></h1>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2 ">
+                <p class="text-center">
+                Joined <%= time_ago_in_words(current_user.created_at) %> ago. 
+                </p>
+                <p class="text-center">
+                Terms Submitted <%= @totalTerms %>
+                
+                <%= link_to "Reset Password", resetpassword_path %>
+            
+            
+        </div>
+    </div>
+</div>
+        

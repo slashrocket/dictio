@@ -22,5 +22,12 @@ class User < ActiveRecord::Base
   validates :username, presence: true,
                         length: { in: 2..15 },
                         uniqueness: { scope: :username }
+  
+  def self.totalTerms(user)
+    
+    Term.where(user_id: user).count
+    
+  end
+
 
 end
