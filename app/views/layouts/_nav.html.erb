@@ -1,26 +1,22 @@
 <div class="navbar-collapse collapse bg-navy" id="navbar-header">
-  <div class="container-fluid">
-    <ul class="nav nav-pills">
-      <% if signed_in? %>
-        <% if current_user.admin? %>
-          <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link white-text" %></li>
-        <% end %>
-        <li class="nav-item"><%= link_to current_user.username, profile_path,  class: "nav-link white-text" %></li>
-        <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link white-text" %></li>
-      <% else %>
-        <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link white-text" %></li>
+  <ul class="nav nav-pills">
+    <% if signed_in? %>
+      <% if current_user.admin? %>
+        <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link white-text" %></li>
       <% end %>
-    </ul>
-  </div>
+      <li class="nav-item"><%= link_to current_user.username, profile_path,  class: "nav-link white-text" %></li>
+      <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link white-text" %></li>
+    <% else %>
+      <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link white-text" %></li>
+    <% end %>
+  </ul>
 </div>
 <div class="navbar navbar-full navbar-static-top">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">&#9776;</button>
-    <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>
-  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">&#9776;</button>
+  <%= link_to "Dictio", root_path, class: "navbar-brand brand-font" %>
 </div>
 <nav class="navbar navbar-fixed-bottom bg-white">
   <ul class="nav">
-    <li class="nav-item pull-md-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "blue-text") %></li>
+    <li class="nav-item pull-xs-right"><%= content_tag(:span, "Made with love by Russell & Sean", class: "blue-text") %></li>
   </ul>
 </nav>
