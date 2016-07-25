@@ -23,10 +23,12 @@ class User < ActiveRecord::Base
                         length: { in: 2..15 },
                         uniqueness: { scope: :username }
   
-  def self.totalTerms(user)
-    
-    Term.where(user_id: user).count
-    
+  def self.totalTerms(user) 
+    Term.where(user_id: user).count 
+  end
+  
+  def self.totalDefinitions(user)
+    Definition.meaning.where(user_id: user).count
   end
 
 
