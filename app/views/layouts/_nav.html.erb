@@ -6,6 +6,9 @@
       <% end %>
       <li class="nav-item"><%= link_to current_user.username, profile_path,  class: "nav-link white-text" %></li>
       <li class="nav-item"><%= link_to "Sign out", sign_out_path, method: :delete, class: "nav-link white-text" %></li>
+      <li class="nav-item"><%= link_to "About", page_path(:about), class: "nav-link white-text" %></li>
+      <li class="nav-item"><%= link_to "Contact", page_path(:contact), class: "nav-link white-text" %></li>
+      <li class="nav-item"><%= link_to "Privacy Policy", page_path(:privacy_policy), class: "nav-link white-text"%></li>
     <% else %>
       <li class="nav-item"><%= link_to "Sign in", sign_in_path, class: "nav-link white-text" %></li>
     <% end %>

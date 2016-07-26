@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     
     get 'profile', to: 'users#show', as: :profile
     get 'reset-password', to: 'clearance/passwords#edit', as: :resetpassword
+    
+    get "/pages/:page" => "pages#show", as: :page
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
