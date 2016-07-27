@@ -51,6 +51,7 @@ gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 
 gem 'fontcustom'
+gem 'font-awesome-rails'
 
 gem 'friendly_id', '~> 5.1.0'
 
