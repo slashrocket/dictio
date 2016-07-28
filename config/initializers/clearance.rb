@@ -4,7 +4,7 @@ Clearance.configure do |config|
   config.cookie_expiration = lambda { |cookies| 1.year.from_now.utc } # Clearance Default
   config.cookie_name = "remember_token" # Clearance Default
   config.cookie_path = "/" # Clearance Default
-  config.routes = false
+  config.routes = true
   config.httponly = false # Clearance Default
   config.mailer_sender = "reply@example.com" # Clearance Default
   config.password_strategy = Clearance::PasswordStrategies::BCrypt # Clearance Default
