@@ -25,7 +25,10 @@
       <div class="col-lg-6 col-xl-4 visible">
         <div class="card">
           <div class="card-block">
-            <h3 class="card-title"><%= link_to truncate(term.name, length: 24), term %></h3>
+            <h4 class="card-title">
+              <%= link_to truncate(term.name, length: 24), term %>
+              <%= link_to "(#{term.acronym})", term, class: "small" if term.acronym? %>
+            </h3>
             <p class="card-text"><%= truncate(term.definitions.first.meaning, length: 100) %></p>
           </div>
           <div class="card-footer">

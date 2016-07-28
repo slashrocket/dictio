@@ -8,7 +8,10 @@
 <% meta_name :'twitter:description', definition.meaning %>
 <% end %>
 
-<h1 class="red-text text-xs-center"><%= @term.name %></h1>
+<h1 class="red-text text-xs-center">
+  <%= @term.name %>
+  <%= content_tag(:span, "(#{@term.acronym})", class: "small") if @term.acronym? %>
+</h1>
 <div class="col-xl-4 col-xl-offset-4">
   <ol>
     <% for definition in @term.definitions %>
