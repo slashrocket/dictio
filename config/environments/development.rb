@@ -23,14 +23,14 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
   
   #Mailer options
-  config.action_mailer.default_url_options = { host: 'russellchristensen-slashrocket.c9users.io' }
+  config.action_mailer.default_url_options = { host: 'dictio-dev.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   
   config.action_mailer.smtp_settings = {
     address:              'smtp.sendgrid.net',
     port:                 587,
-    domain:               'dictio.io',
+    domain:               'dictio-dev.herokuapp.com',
     user_name:            ENV['SENDGRID_USERNAME'],
     password:             ENV['SENDGRID_PASSWORD'],
     authentication:       'plain',
