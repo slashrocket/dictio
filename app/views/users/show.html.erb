@@ -8,19 +8,19 @@
             <div class="row">
             <ul class="list-group">
               <li class="list-group-item">
-                <span class="label label-default label-pill pull-xs-right"><%= @totalTerms %></span>
-                    Terms submitted
+                Terms submitted
+                <span class="label label-aqua label-pill pull-xs-right"><%= @totalTerms %></span>
                 </li>
               <li class="list-group-item">
-                <span class="label label-default label-pill pull-xs-right"><%= @totalDefinitions %></span>
-                    Definitions submitted
+                Definitions submitted
+                <span class="label label-aqua label-pill pull-xs-right"><%= @totalDefinitions %></span>
                 </li>
-
               <li class="list-group-item">
-                  <span class="label label-default label-pill pull-xs-right"><%= time_ago_in_words(current_user.created_at) %></span>
-                  Joined
+                Joined
+                <span class="label label-aqua label-pill pull-xs-right"><%= time_ago_in_words(current_user.created_at) %></span>
+              </li>
               <li class="list-group-item">
-                    <%= link_to "Reset Password", resetpassword_path %>
+                <%= link_to "Reset Password", resetpassword_path %>
               </li>
             </ul>
         </div>
