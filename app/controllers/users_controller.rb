@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @totalTerms = User.totalTerms(current_user)
+    @totalDefinitions = User.totalDefinitions(current_user)
   end
 
   def create
