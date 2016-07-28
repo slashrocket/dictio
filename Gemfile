@@ -53,6 +53,8 @@ gem 'oj', '~> 2.12.14'
 gem 'fontcustom'
 gem 'font-awesome-rails'
 
+gem 'sendgrid-ruby'
+
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'google-analytics-rails', '1.1.0'
