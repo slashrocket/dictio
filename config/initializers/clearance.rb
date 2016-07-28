@@ -6,7 +6,7 @@ Clearance.configure do |config|
   config.cookie_path = "/" # Clearance Default
   config.routes = true
   config.httponly = false # Clearance Default
-  config.mailer_sender = "reply@example.com" # Clearance Default
+  config.mailer_sender = "no-reply@dictio.io" # Clearance Default
   config.password_strategy = Clearance::PasswordStrategies::BCrypt # Clearance Default
   config.redirect_url = "/" # Clearance Default
   config.secure_cookie = false # Clearance Default
