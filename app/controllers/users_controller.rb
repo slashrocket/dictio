@@ -15,6 +15,15 @@ class UsersController < ApplicationController
       render template: 'users/new'
     end
   end
+  
+def update
+    if current_user.update_attributes(user_params)
+      flash[:success] = "Profile updated!"
+      redirect_to profile_path
+    else
+      render 'profile'
+    end
+end
 
   private
 
@@ -33,5 +42,9 @@ class UsersController < ApplicationController
 
   def user_params
     params[Clearance.configuration.user_parameter] || Hash.new
+    params.require(:user).permit(:email)
   end
+  
+  
+  
 end

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :users,
     controller: 'users',
-    only: 'create'
+    only: [:create, :update]
 
   get 'profile', to: 'users#show', as: :profile
   get 'reset-password', to: 'clearance/passwords#new', as: :resetpassword
