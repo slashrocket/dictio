@@ -21,7 +21,7 @@
         <span id="voting-<%= definition.id %>">
           <% if current_user.voted_for?(definition) %>
             <%=
-              link_to ("<span class='icon-vote voted'></span>").html_safe,
+              link_to ("<i class='fa fa-arrow-up' aria-hidden='true'></i>").html_safe,
               unvote_term_definition_path(definition.term, definition),
               method: :post,
               remote: true,
@@ -29,7 +29,7 @@
             %>
           <% else %>
             <%=
-              link_to ("<span class='icon-vote unvoted'></span>").html_safe,
+              link_to ("<i class='fa fa-arrow-up' aria-hidden='true'></i>").html_safe,
               vote_up_term_definition_path(definition.term, definition),
               method: :post,
               remote: true,
