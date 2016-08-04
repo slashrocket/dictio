@@ -25,13 +25,13 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  config.action_mailer.default_url_options = { host: 'dictio-dev.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'dictio.io' }
   config.action_mailer.delivery_method = :smtp
-  
+
   config.action_mailer.smtp_settings = {
     address:              'smtp.sendgrid.net',
     port:                 587,
-    domain:               'dictio-prod.herokuapp.com',
+    domain:               'dictio.io',
     user_name:            ENV['SENDGRID_USERNAME'],
     password:             ENV['SENDGRID_PASSWORD'],
     authentication:       'plain',
@@ -44,7 +44,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-  
+
   #Serve static assets
   config.serve_static_files = true
 
