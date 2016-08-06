@@ -135,6 +135,10 @@ input[type="search"] {
   color: $aqua;
 }
 
+.disabled-vote {
+  color: $aqua;
+}
+
 .icon-vote:hover {
   color: $cello;
 }
@@ -163,4 +167,12 @@ input[type="search"] {
 .label-aqua {
   color: $cello;
   background-color: $aqua;
+}
+
+.tooltip-arrow {
+  border-bottom-color: $cello !important;
+}
+
+.tooltip-inner {
+  background-color: $cello !important;
 }

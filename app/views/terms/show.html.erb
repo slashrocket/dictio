@@ -33,10 +33,13 @@
               vote_up_term_definition_path(definition.term, definition),
               method: :post,
               remote: true,
-              id: "up-#{definition.id}"
+              id: "up-#{definition.id}",
+              class: "unvoted"
             %>
           <% end %>
         </span>
+        <% else %>
+          <i id='up-<%= definition.id %>' class='fa fa-arrow-up disabled-vote' aria-hidden='true' data-toggle='tooltip' data-placement='bottom' title='Sign in to vote'></i>
       <% end %>
 
       <span id="score-<%= definition.id %>"><%= definition.score %></span>
@@ -48,3 +51,7 @@
     <%= link_to "Add a New Definition", new_term_definition_path(@term), class: "btn btn-red" %>
   </h5>
 </div>
+
+<script>
+  $('[data-toggle="tooltip"]').tooltip();
+</script>
