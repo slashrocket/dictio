@@ -5,7 +5,7 @@ class TermsControllerTest < ActionController::TestCase
 
   test "get index is successful" do
     get :index
-    assert_includes assigns(:terms), terms(:rails)
+    assert_includes assigns(:terms), terms(:slashrocket)
     assert_response :success
     assert_select 'title', 'Dictio'
   end
