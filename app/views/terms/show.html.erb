@@ -12,7 +12,7 @@
   <%= @term.name %>
   <%= content_tag(:span, "(#{@term.acronym})", class: "small") if @term.acronym? %>
 </h1>
-<div class="col-xl-4 col-xl-offset-4">
+<div class="col-xl-6 col-xl-offset-3">
   <ol>
     <% for definition in @term.definitions %>
       <li class="lead"><span><%= definition.meaning %></span></li>
