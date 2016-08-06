@@ -12,7 +12,8 @@
 
 slashrocket:
   name: Slashrocket
+  acronym: nil
 
 rails:
   name: Ruby on Rails
-
+  acronym: RoR
